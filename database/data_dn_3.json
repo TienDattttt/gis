@@ -1,0 +1,1734 @@
+{
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.5 1bd436f1",
+    "osm3s": {
+      "timestamp_osm_base": "2025-04-02T11:25:15Z",
+      "timestamp_areas_base": "2025-02-06T02:17:44Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+  
+  {
+    "type": "node",
+    "id": 1538334281,
+    "lat": 16.1189286,
+    "lon": 108.2720036,
+    "tags": {
+      "name": "Ban Co Peak",
+      "name:vi": "Đỉnh Bàn Cờ",
+      "tourism": "viewpoint",
+      "wikipedia" : "https://vinpearl.com/vi/dinh-ban-co-noc-nha-da-nang-dang-de-chinh-phuc",
+      "short_description": "Đỉnh Bàn Cờ là địa điểm du lịch nổi tiếng thu hút rất nhiều bạn trẻ gần xa. Không chỉ bị ấn tượng bởi sự đơn sơ, giản dị, mộc mạc trong văn hoá địa khu mà truyền thuyết lịch sử về nơi đây còn khiến nhiều người thích thú. Cùng khám phá ngay nào!",
+      "title": "Đỉnh Bàn Cờ - “Nóc nhà” Đà Nẵng đáng để chinh phục",
+    "basic_info": {
+      "address": "Bán đảo Sơn Trà, Đà Nẵng, Việt Nam",
+      "opening_hours": "Cả ngày"
+    },
+    "image_1": {
+      "url": "/images/dinhbanco_1.jpg",
+      "caption": "Tượng ông Tiên ngồi đánh cờ"
+    },
+    "description_1": "Đỉnh Bàn Cờ – nơi hội tụ giữa thiên nhiên hùng vĩ và truyền thuyết huyền bí. Đứng trên đỉnh núi cao, du khách không chỉ chiêm ngưỡng khung cảnh thơ mộng của thành phố Đà Nẵng mà còn cảm nhận được hơi thở của lịch sử, nơi tương truyền rằng hai vị tiên đã từng giao đấu trên bàn cờ giữa trời mây.",
+    "poem": "Mây vờn đỉnh núi xa xăm,  \nTrên cao bàn cờ, ai người thắng thua?",
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=PmO7-jd1-PY",
+        "caption": "Khám phá Đỉnh Bàn Cờ"
+      }
+    ],
+    "description_2": "Từ độ cao gần 700m, Đỉnh Bàn Cờ mở ra một bức tranh thiên nhiên kỳ vĩ. Dưới chân bạn là cả thành phố Đà Nẵng với biển xanh trải dài, những con đường uốn lượn quanh bán đảo Sơn Trà, và xa xa là những cây cầu nổi tiếng vắt ngang dòng sông Hàn. Cảnh sắc nơi đây thay đổi theo từng thời khắc trong ngày, từ bình minh rực rỡ đến hoàng hôn mơ màng, tạo nên một trải nghiệm khó quên cho bất kỳ ai đặt chân tới.",
+    "image_2": {
+      "url": "/images/dinhbanco_2.jpg",
+      "caption": "Toàn cảnh Đỉnh Bàn Cờ"
+    }
+    }
+  },
+  {
+    "type": "node",
+    "id": 1623183635,
+    "lat": 16.1027134,
+    "lon": 108.2951213,
+    "tags": {
+      "name": "Bãi Nam",
+      "name:vi": "Bãi Nam",
+      "tourism": "viewpoint",
+      "wikipedia": "https://dulichsontra.com/bai-nam/",
+      "short_description": "Bãi Nam là một trong những bãi biển đẹp và hoang sơ nhất tại bán đảo Sơn Trà, nơi lý tưởng để tận hưởng không gian yên tĩnh và ngắm hoàng hôn tuyệt đẹp.",
+      "title": "Bãi Nam - Thiên đường biển hoang sơ giữa lòng Đà Nẵng",
+      "basic_info": {
+        "address": "Bán đảo Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "/images/bainam_1.jpg",
+        "caption": "Bãi Nam với bờ cát trắng và làn nước trong xanh"
+      },
+      "description_1": "Bãi Nam nằm ẩn mình giữa những rặng dương xanh mát, là điểm đến lý tưởng cho những ai muốn trốn khỏi sự ồn ào của phố thị. Bãi biển này nổi tiếng với bờ cát trắng mịn, làn nước trong vắt và khung cảnh thiên nhiên hoang sơ, chưa bị tác động nhiều bởi du lịch đại chúng.",
+      "poem": "Sóng vỗ rì rào bãi Nam,\nCát vàng nắng đổ dịu dàng biển xanh",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=7kjY8NYRUQE&pp=ygULYsOjaSBuYW0gcnY%3D",
+          "caption": "Khám phá vẻ đẹp hoang sơ của Bãi Nam"
+        }
+      ],
+      "description_2": "Đến với Bãi Nam, du khách sẽ được tận hưởng bầu không khí trong lành cùng tiếng sóng vỗ rì rào. Buổi chiều là thời điểm lý tưởng nhất để ngắm hoàng hôn khi mặt trời dần lặn sau những rặng núi phía xa, tạo nên khung cảnh lãng mạn hiếm có. Xung quanh bãi biển còn có nhiều góc sống ảo đẹp mắt với những tảng đá lớn và cây xanh um tùm.",
+      "image_2": {
+        "url": "/images/bainam_2.jpg",
+        "caption": "Hoàng hôn tuyệt đẹp tại Bãi Nam"
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 1758586662,
+    "lat": 16.0043044,
+    "lon": 108.2635270,
+    "tags": {
+      "ele": "160",
+      "name": "Thuỷ Sơn",
+      "name:vi": "Thuỷ Sơn",
+      "tourism": "attraction",
+      "wikipedia": "https://vinpearl.com/vi/ngon-thuy-son-ngu-hanh-son-da-nang-kinh-nghiem-kham-pha-chi-tiet",
+      "short_description": "Thuỷ Sơn là ngọn núi lớn nhất trong quần thể Ngũ Hành Sơn, nổi tiếng với hệ thống hang động kỳ bí, chùa chiền cổ kính và tầm nhìn toàn cảnh thành phố Đà Nẵng.",
+      "title": "Thuỷ Sơn - Viên ngọc quý của Ngũ Hành Sơn",
+      "basic_info": {
+        "address": "Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+        "opening_hours": "07:00-17:30 hàng ngày"
+      },
+      "image_1": {
+        "url": "/images/thuyson_1.jpg",
+        "caption": "Toàn cảnh Thuỷ Sơn nhìn từ trên cao"
+      },
+      "description_1": "Thuỷ Sơn là ngọn núi cao nhất và đẹp nhất trong quần thể Ngũ Hành Sơn, với độ cao 160m so với mực nước biển. Nơi đây không chỉ có cảnh quan thiên nhiên hùng vĩ mà còn lưu giữ nhiều di tích lịch sử, văn hóa có giá trị như chùa Tam Thai, chùa Linh Ứng, hang Hoa Nghiêm...",
+      "poem": "Non nước hữu tình Thuỷ Sơn,\nChùa xưa in bóng mây trời thong dong",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=qyRYYE9apZI&pp=ygUaVGjhu6d5IHPGoW4gxJHDoCBu4bq1bmcgcnY%3D",
+          "caption": "Hành trình khám phá Thuỷ Sơn"
+        }
+      ],
+      "description_2": "Leo lên đỉnh Thuỷ Sơn, du khách sẽ được chiêm ngưỡng toàn cảnh thành phố Đà Nẵng, dải cát trắng mịn Non Nước và biển Đông xanh thẳm. Trên đường lên đỉnh, bạn sẽ đi qua nhiều hang động tự nhiên với những nhũ đá hình thù kỳ thú, cùng nhiều ngôi chùa cổ mang đậm nét kiến trúc truyền thống Việt Nam.",
+      "image_2": {
+        "url": "/images/thuyson_2.jpg",
+        "caption": "Hang động kỳ bí tại Thuỷ Sơn"
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 2177056870,
+    "lat": 16.0244662,
+    "lon": 108.0262303,
+    "tags": {
+      "name": "Thác Tóc Tiên",
+      "name:vi": "Thác Tóc Tiên",
+      "tourism": "viewpoint",
+      "wikipedia": "https://saoviettravel.com.vn/blog/thac-toc-tien-ba-na/",
+      "short_description": "Thác Tóc Tiên là điểm du lịch sinh thái hấp dẫn với dòng nước mát lạnh đổ từ trên cao xuống như mái tóc của nàng tiên, tạo nên khung cảnh thiên nhiên thơ mộng.",
+      "title": "Thác Tóc Tiên - Nét đẹp hoang sơ giữa đại ngàn",
+      "basic_info": {
+        "address": "Xã Hòa Bắc, Huyện Hòa Vang, Đà Nẵng",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "/images/thactoctien_1.jpg",
+        "caption": "Dòng thác đổ xuống như mái tóc tiên"
+      },
+      "description_1": "Thác Tóc Tiên nằm ẩn mình giữa khu rừng nguyên sinh thuộc xã Hòa Bắc, cách trung tâm thành phố Đà Nẵng khoảng 30km về phía Tây. Thác có độ cao khoảng 30m, dòng nước đổ xuống qua nhiều tầng đá tạo thành hình ảnh giống như mái tóc dài của nàng tiên, từ đó mà có tên gọi Thác Tóc Tiên.",
+      "poem": "Tóc Tiên buông xõa giữa ngàn,\nSuối reo róc rách ngỡ ngàng lòng ta",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/shorts/wAU3aBj_5yU",
+          "caption": "Khám phá vẻ đẹp Thác Tóc Tiên"
+        }
+      ],
+      "description_2": "Xung quanh thác là hệ thực vật phong phú với nhiều loài cây cổ thụ và hoa rừng đua nhau khoe sắc. Du khách có thể tắm mình trong làn nước mát lạnh dưới chân thác hoặc tổ chức cắm trại, dã ngoại trong khu vực rừng thông xung quanh. Đây là điểm đến lý tưởng để tránh nóng vào những ngày hè oi bức.",
+      "image_2": {
+        "url": "/images/thactoctien_2.jpg",
+        "caption": "Không gian xanh mát quanh thác"
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 3076962095,
+    "lat": 16.0480568,
+    "lon": 108.2177941,
+    "tags": {
+      "name": "Bảo tàng Quân khu 5",
+      "name:vi": "Bảo tàng Quân khu 5",
+      "tourism": "museum",
+      "wikipedia": "https://vi.wikipedia.org/wiki/B%E1%BA%A3o_t%C3%A0ng_Qu%C3%A2n_khu_5,_%C4%90%C3%A0_N%E1%BA%B5ng",
+      "short_description": "Bảo tàng Quân khu 5 là nơi lưu giữ và trưng bày hàng ngàn hiện vật, tư liệu quý giá về truyền thống đấu tranh cách mạng của quân và dân miền Trung - Tây Nguyên.",
+      "title": "Bảo tàng Quân khu 5 - Nơi lưu giữ lịch sử hào hùng",
+      "basic_info": {
+        "address": "Duy Tân, Hải Châu, Đà Nẵng",
+        "opening_hours": "07:30-11:00 và 13:30-17:00 từ thứ 2 đến thứ 6"
+      },
+      "image_1": {
+        "url": "/images/baotangquankhu5_1.jpg",
+        "caption": "Không gian trưng bày ngoài trời với nhiều vũ khí cỡ lớn"
+      },
+      "description_1": "Bảo tàng Quân khu 5 được thành lập năm 1977, là nơi lưu giữ hơn 15.000 hiện vật, hình ảnh, tài liệu quý giá về hai cuộc kháng chiến chống Pháp và chống Mỹ của quân và dân miền Trung - Tây Nguyên. Các hiện vật được trưng bày theo từng chủ đề, phản ánh chân thực cuộc sống chiến đấu gian khổ nhưng đầy anh dũng của các chiến sĩ.",
+      "poem": "Bảo tàng lưu dấu chiến trường,\nTự hào lịch sử vẻ vang một thời",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=teVj5ZV8-rc",
+          "caption": "Tham quan Bảo tàng Quân khu 5"
+        }
+      ],
+      "description_2": "Bên cạnh các phòng trưng bày trong nhà, bảo tàng còn có khu trưng bày ngoài trời với nhiều vũ khí, khí tài quân sự cỡ lớn như xe tăng, máy bay, pháo... Đặc biệt, bảo tàng còn tái hiện lại một số trận đánh nổi tiếng bằng mô hình và các tác phẩm nghệ thuật, giúp du khách dễ hình dung về lịch sử hào hùng của dân tộc.",
+      "image_2": {
+        "url": "/images/baotangquankhu5_2.jpg",
+        "caption": "Không gian trưng bày bên trong bảo tàng"
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 4172034499,
+    "lat": 16.0205336,
+    "lon": 108.2617440,
+    "tags": {
+      "name": "Bãi biển Non Nước",
+      "name:vi": "Bãi biển Non Nước",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/B%C3%A3i_bi%E1%BB%83n_Non_N%C6%B0%E1%BB%9Bc",
+      "short_description": "Bãi biển Non Nước nổi tiếng với bờ cát trắng mịn trải dài 5km, làn nước trong xanh và cảnh quan thiên nhiên hài hòa với núi Ngũ Hành Sơn hùng vĩ.",
+      "title": "Bãi biển Non Nước - Thiên đường nghỉ dưỡng bậc nhất Đà Nẵng",
+      "basic_info": {
+        "address": "Ngũ Hành Sơn, Đà Nẵng",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "/images/nonnuoc_1.jpg",
+        "caption": "Bãi biển Non Nước với bờ cát trắng mịn"
+      },
+      "description_1": "Nằm dưới chân núi Ngũ Hành Sơn, bãi biển Non Nước là một trong những bãi biển đẹp nhất Đà Nẵng với bờ cát trắng mịn trải dài 5km, làn nước trong xanh và sóng êm. Nơi đây từng được tổ chức du lịch thế giới bình chọn là một trong những bãi biển quyến rũ nhất hành tinh.",
+      "poem": "Non Nước hữu tình biển xanh,\nCát vàng sóng vỗ dịu lành nắng mai",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=X50vUEqypUY",
+          "caption": "Thư giãn tại bãi biển Non Nước"
+        }
+      ],
+      "description_2": "Xung quanh bãi biển là hệ thống resort, khách sạn cao cấp cùng nhiều nhà hàng phục vụ hải sản tươi ngon. Du khách có thể tham gia các hoạt động thể thao biển như lướt sóng, chèo thuyền kayak hoặc đơn giản là thư giãn dưới những tán dù xanh mát. Buổi chiều là thời điểm lý tưởng để ngắm hoàng hôn khi mặt trời lặn sau dãy Ngũ Hành Sơn.",
+      "image_2": {
+        "url": "/images/nonnuoc_2.jpg",
+        "caption": "Hoàng hôn tuyệt đẹp tại bãi biển Non Nước"
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 4807957148,
+    "lat": 16.0364559,
+    "lon": 108.2246715,
+    "tags": {
+      "name": "Trung tâm Giải trí Phức hợp Helio Center",
+      "name:vi": "Trung tâm Giải trí Phức hợp Helio Center",
+      "tourism": "theme_park",
+      "wikipedia": "https://danangfantasticity.com/cung-kham-pha/helio-center-vn",
+      "short_description": "Helio Center là khu vui chơi giải trí sôi động với nhiều hoạt động dành cho gia đình và giới trẻ, từ trò chơi đến ẩm thực đường phố.",
+      "title": "Helio Center - Thế giới giải trí giữa lòng Đà Nẵng",
+      "basic_info": {
+        "address": "2 Tháng 9, Hòa Cường Nam, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "15:00-22:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Khu vui chơi tại Helio Center"
+      },
+      "description_1": "Helio Center mang đến không gian giải trí đa dạng với khu trò chơi trong nhà, chợ đêm ẩm thực và các sự kiện ngoài trời đầy màu sắc.",
+      "poem": "Đèn sáng lung linh đêm về, \nVui chơi rộn rã, lòng hề thảnh thơi.",
+      "videos": "https://www.youtube.com/watch?v=EmWYc0TtQGI",
+      "description_2": "Đây là điểm đến lý tưởng cho các gia đình, nhóm bạn trẻ với khu vực trò chơi hiện đại và hàng loạt món ăn đặc sản miền Trung.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5272119221,
+    "lat": 16.0629130,
+    "lon": 108.2298665,
+    "tags": {
+      "name": "Cá Chép Hóa Rồng",
+      "name:vi": "Cá Chép Hóa Rồng",
+      "tourism": "attraction",
+      "wikipedia": "https://vinpearl.com/vi/tham-quan-tuong-ca-chep-hoa-rong-da-nang-bieu-tuong-du-lich-da-thanh",
+      "short_description": "Tượng Cá Chép Hóa Rồng là công trình nghệ thuật độc đáo bên sông Hàn, biểu tượng cho sự phát triển mạnh mẽ của Đà Nẵng.",
+      "title": "Cá Chép Hóa Rồng - Biểu tượng sông Hàn",
+      "basic_info": {
+        "address": "Đường Trần Hưng Đạo, Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Tượng Cá Chép Hóa Rồng về đêm"
+      },
+      "description_1": "Nằm bên bờ sông Hàn, tượng Cá Chép Hóa Rồng được chế tác tinh xảo, mang ý nghĩa phong thủy về sự thịnh vượng và vươn lên.",
+      "poem": "Cá vượt ngàn sóng hóa rồng, \nSông Hàn rực sáng, mộng lòng thênh thang.",
+      "videos": "https://www.youtube.com/watch?v=_bq7WWfTfx8",
+      "description_2": "Vào ban đêm, tượng được thắp sáng lung linh, trở thành điểm check-in nổi bật cho du khách và người dân địa phương.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5273998822,
+    "lat": 16.0352694,
+    "lon": 108.2352722,
+    "tags": {
+      "name": "Cầu Tiên Sơn",
+      "name:vi": "Cầu Tiên Sơn",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Ti%C3%AAn_S%C6%A1n",
+      "short_description": "Cầu Tiên Sơn là một trong những cây cầu hiện đại bắc qua sông Hàn, góp phần vào sự phát triển giao thông và cảnh quan Đà Nẵng.",
+      "title": "Cầu Tiên Sơn - Dấu ấn hiện đại bên sông Hàn",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cầu Tiên Sơn nhìn từ xa"
+      },
+      "description_1": "Cầu Tiên Sơn với thiết kế hiện đại, không chỉ là tuyến giao thông quan trọng mà còn là điểm nhấn kiến trúc trong lòng thành phố.",
+      "poem": "Cầu vắt ngang dòng sông Hàn, \nThành phố rực rỡ, muôn vàn ánh quang.",
+      "videos": "https://www.youtube.com/watch?v=AQDteHdjSkE&pp=ygUTY-G6p3UgdGnDqm4gc8ahbiBydg%3D%3D",
+      "description_2": "Từ trên cầu, du khách có thể ngắm nhìn dòng sông Hàn thơ mộng và những tòa nhà cao tầng của Đà Nẵng hiện đại.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5273998823,
+    "lat": 16.0501790,
+    "lon": 108.2293814,
+    "tags": {
+      "name": "Cầu Trần Thị Lý",
+      "name:vi": "Cầu Trần Thị Lý",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Tr%E1%BA%A7n_Th%E1%BB%8B_L%C3%BD",
+      "short_description": "Cầu Trần Thị Lý với thiết kế cánh buồm độc đáo là một trong những biểu tượng kiến trúc nổi bật của Đà Nẵng.",
+      "title": "Cầu Trần Thị Lý - Cánh buồm giữa lòng thành phố",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cầu Trần Thị Lý về đêm"
+      },
+      "description_1": "Cầu Trần Thị Lý nổi bật với trụ tháp nghiêng hình cánh buồm, tượng trưng cho khát vọng vươn xa của thành phố biển Đà Nẵng.",
+      "poem": "Cánh buồm nghiêng giữa trời xanh, \nSông Hàn lộng lẫy, lòng thành say mê.",
+      "videos": [],
+      "description_2": "Vào ban đêm, cầu được chiếu sáng rực rỡ, tạo nên một khung cảnh lung linh phản chiếu trên mặt nước sông Hàn.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5273999121,
+    "lat": 16.0948525,
+    "lon": 108.2204317,
+    "tags": {
+      "name": "Cầu Thuận Phước",
+      "name:vi": "Cầu Thuận Phước",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Thu%E1%BA%ADn_Ph%C6%B0%E1%BB%9Bc",
+      "short_description": "Cầu Thuận Phước là cây cầu dây văng dài nhất Việt Nam, nối liền trung tâm Đà Nẵng với cảng biển Tiên Sa.",
+      "title": "Cầu Thuận Phước - Dây văng nối biển khơi",
+      "basic_info": {
+        "address": "Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cầu Thuận Phước nhìn từ xa"
+      },
+      "description_1": "Với thiết kế dây văng hiện đại, cầu Thuận Phước không chỉ là công trình giao thông quan trọng mà còn là điểm nhấn kiến trúc của Đà Nẵng.",
+      "poem": "Cầu vươn xa tới biển ngàn, \nDây văng lộng lẫy, nối tràn ước mơ.",
+      "videos": "https://www.youtube.com/watch?v=Qkb7_nkpZp0",
+      "description_2": "Vào ban đêm, cầu sáng rực với hệ thống đèn chiếu sáng, tạo nên một cảnh tượng huyền ảo bên vịnh Đà Nẵng.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5276547123,
+    "lat": 16.0510888,
+    "lon": 108.2292466,
+    "tags": {
+      "name": "Cầu Nguyễn Văn Trỗi",
+      "name:vi": "Cầu Nguyễn Văn Trỗi",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Nguy%E1%BB%85n_V%C4%83n_Tr%E1%BB%97i",
+      "short_description": "Cầu Nguyễn Văn Trỗi là cây cầu cổ nhất Đà Nẵng, mang giá trị lịch sử và kiến trúc độc đáo từ thời chiến tranh.",
+      "title": "Cầu Nguyễn Văn Trỗi - Chứng nhân thời gian",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cầu Nguyễn Văn Trỗi nhìn từ bờ sông"
+      },
+      "description_1": "Được xây dựng từ thập niên 1960, cầu Nguyễn Văn Trỗi mang dấu ấn lịch sử với thiết kế thép đơn sơ nhưng bền bỉ qua thời gian.",
+      "poem": "Cầu xưa đứng lặng sông Hàn, \nThời gian trôi mãi, lòng vần không phai.",
+      "videos": "https://www.youtube.com/watch?v=NeJtQvOScsc&pp=ygUdY-G6p3Ugbmd1eeG7hW4gdsSDbiB0cuG7l2kgcnY%3D",
+      "description_2": "Hiện nay, cầu được giữ lại như một di sản, trở thành điểm check-in hoài cổ giữa lòng thành phố hiện đại.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5286977425,
+    "lat": 15.9681262,
+    "lon": 108.0196301,
+    "tags": {
+      "alt_name": "Hot Springs Park",
+      "name": "Núi Thần Tài",
+      "name:vi": "Núi Thần Tài",
+      "tourism": "attraction",
+      "wikipedia": "https://nuithantai.vn/gioi-thieu-nui-than-tai-i1",
+      "short_description": "Núi Thần Tài là khu du lịch suối nước nóng nổi tiếng với cảnh quan thiên nhiên và dịch vụ thư giãn tuyệt vời.",
+      "title": "Núi Thần Tài - Suối nước nóng giữa thiên nhiên",
+      "basic_info": {
+        "address": "QL14G, Hòa Phú, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "8:00-17:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Suối nước nóng tại Núi Thần Tài"
+      },
+      "description_1": "Núi Thần Tài mang đến trải nghiệm tắm suối nước nóng tự nhiên giữa rừng xanh, kết hợp với các trò chơi nước và công viên khủng long độc đáo.",
+      "poem": "Suối nóng tuôn chảy giữa ngàn, \nThiên nhiên ôm ấp, lòng vần thư thai.",
+      "videos": "https://www.youtube.com/watch?v=e3z7W7P9w5M&pp=ygUYc3Xhu5FpIG7Ds25nIHRo4bqnbiB0w6Bp",
+      "description_2": "Đây là điểm đến lý tưởng để thư giãn, tái tạo năng lượng và khám phá thiên nhiên trong không gian yên bình.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5383428522,
+    "lat": 16.1559167,
+    "lon": 108.1098007,
+    "tags": {
+      "name": "Khu Du Lịch Sinh Thái Suối Lương",
+      "name:vi": "Khu Du Lịch Sinh Thái Suối Lương",
+      "tourism": "attraction",
+      "wikipedia": "https://vinpearl.com/vi/suoi-luong-da-nang-bo-tui-kinh-nghiem-choi-gi-an-gi-o-dau",
+      "short_description": "Khu du lịch sinh thái Suối Lương là điểm đến lý tưởng để tận hưởng thiên nhiên với suối mát và không gian văn hóa độc đáo.",
+      "title": "Suối Lương - Lãng mạn giữa rừng xanh",
+      "basic_info": {
+        "address": "Hòa Bắc, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "7:00-17:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Dòng suối tại Suối Lương"
+      },
+      "description_1": "Suối Lương nổi bật với dòng suối trong lành chảy qua những tảng đá lớn, bên cạnh khu vực tái hiện văn hóa dân tộc Tây Nguyên đầy sắc màu.",
+      "poem": "Suối reo giữa núi rừng xanh, \nVăn hóa rực rỡ, lòng thành mê say.",
+      "videos": "https://www.youtube.com/watch?v=lO-MRP1XbEU&pp=ygUOc3Xhu5FpIGzGsMahbmc%3D",
+      "description_2": "Du khách có thể tắm suối, thưởng thức ẩm thực địa phương và khám phá các công trình kiến trúc độc đáo tại đây.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 5817580453,
+    "lat": 16.0953807,
+    "lon": 108.2430769,
+    "tags": {
+      "addr:street": "Trần Nhân Tông",
+      "name": "Bảo tàng 3D Art in Paradise Đà Nẵng",
+      "name:vi": "Bảo tàng 3D Art in Paradise Đà Nẵng",
+      "tourism": "museum",
+      "wikipedia": "https://vinpearl.com/vi/bao-tang-3d-da-nang-thien-duong-song-ao-chay-may-cho-cac-tin-do-du-lich",
+      "short_description": "Bảo tàng 3D Art in Paradise là nơi trưng bày các tác phẩm nghệ thuật 3D sống động, mang đến trải nghiệm chụp ảnh độc đáo.",
+      "title": "Bảo tàng 3D Art in Paradise - Thế giới ảo diệu",
+      "basic_info": {
+        "address": "Trần Nhân Tông, Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "9:00-18:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Tác phẩm 3D tại bảo tàng"
+      },
+      "description_1": "Với hàng trăm bức tranh 3D được vẽ tỉ mỉ, bảo tàng mang đến không gian tương tác thú vị cho du khách tạo ra những bức ảnh sáng tạo.",
+      "poem": "Tranh vẽ hóa thật giữa đời, \nBước vào kỳ ảo, lòng người mê say.",
+      "videos": "https://www.youtube.com/watch?v=lqu1jS0kZ78&pp=ygUaYuG6o28gdMOgbmcgM2QgxJHDoCBu4bq1bmc%3D",
+      "description_2": "Đây là điểm đến hoàn hảo cho gia đình và giới trẻ yêu thích nghệ thuật và nhiếp ảnh, với các chủ đề đa dạng từ thiên nhiên đến giả tưởng.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 6124331691,
+    "lat": 16.1085176,
+    "lon": 108.2558001,
+    "tags": {
+      "name": "Con đường đầy khỉ",
+      "name:vi": "Con đường đầy khỉ",
+      "tourism": "viewpoint",
+      "wikipedia": "https://sgtt.thesaigontimes.vn/cung-duong-khi%CC%89/",
+      "short_description": "Con đường đầy khỉ trên bán đảo Sơn Trà là nơi du khách có thể bắt gặp những chú khỉ tinh nghịch giữa thiên nhiên hoang dã.",
+      "title": "Con đường đầy khỉ - Gặp gỡ thiên nhiên Sơn Trà",
+      "basic_info": {
+        "address": "Bán đảo Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Đàn khỉ trên đường Sơn Trà"
+      },
+      "description_1": "Nằm trên cung đường quanh co của bán đảo Sơn Trà, con đường này thu hút du khách bởi những đàn khỉ tự nhiên, thân thiện nhưng cũng rất tinh nghịch.",
+      "poem": "Khỉ nhảy tung tăng giữa ngàn, \nRừng xanh rộn rã, lòng vần thích mê.",
+      "videos": "https://www.youtube.com/watch?v=2pzT-dWuG7c&pp=ygUqY29uIMSRxrDhu51uZyDEkeG6p3kga2jhu4kg4bufIMSRw6AgbuG6tW5n",
+      "description_2": "Đây là điểm dừng chân thú vị để quan sát đời sống động vật hoang dã và tận hưởng không khí trong lành của rừng núi.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 6528451001,
+    "lat": 16.0276784,
+    "lon": 108.2218873,
+    "tags": {
+      "name": "Cây đa Đò Xu",
+      "name:vi": "Cây đa Đò Xu",
+      "tourism": "attraction",
+      "wikipedia": "https://mapcarta.com/de/W695008783",
+      "short_description": "Cây đa Đò Xu là một cây svo cổ thụ với tuổi đời hàng trăm năm, là biểu tượng văn hóa và tâm linh của người dân Đà Nẵng.",
+      "title": "Cây đa Đò Xu - Chứng nhân lịch sử",
+      "basic_info": {
+        "address": "Hòa Cường Bắc, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cây đa Đò Xu cổ thụ"
+      },
+      "description_1": "Cây đa Đò Xu với tán lá rộng lớn và rễ cây đồ sộ là nơi người dân thường đến cầu nguyện và tưởng nhớ những giá trị lịch sử gắn liền.",
+      "poem": "Đa cổ đứng lặng trăm năm, \nRễ sâu bám đất, lòng vần kính mong.",
+      "videos": "https://www.youtube.com/watch?v=MQL6M7YmioU&pp=ygUQY8OieSDEkWEgxJHDsiB4ddIHCQl-CQGHKiGM7w%3D%3D",
+      "description_2": "Cây đa không chỉ là một kỳ quan thiên nhiên mà còn là nơi lưu giữ những câu chuyện văn hóa của vùng đất Đà Nẵng xưa.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 7276380289,
+    "lat": 16.0721398,
+    "lon": 108.2268106,
+    "tags": {
+      "name": "Cầu Sông Hàn",
+      "name:en": "Han Bridge",
+      "name:vi": "Cầu Sông Hàn",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_S%C3%B4ng_H%C3%A0n",
+      "short_description": "Cầu Sông Hàn là cây cầu quay đầu tiên tại Việt Nam, biểu tượng của sự phát triển và sáng tạo của Đà Nẵng.",
+      "title": "Cầu Sông Hàn - Biểu tượng quay giữa dòng sông",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cầu Sông Hàn về đêm"
+      },
+      "description_1": "Được khánh thành năm 2000, cầu Sông Hàn có thể xoay 90 độ để tàu lớn đi qua, là niềm tự hào của người dân thành phố.",
+      "poem": "Cầu quay giữa sóng sông Hàn, \nĐêm về lộng lẫy, muôn vàn ánh sao.",
+      "videos": "https://www.youtube.com/watch?v=NfFSgnNXSOk&pp=ygUQY-G6p3Ugc8O0bmcgaMOgbtIHCQl-CQGHKiGM7w%3D%3D",
+      "description_2": "Vào cuối tuần, cầu quay lúc 0h sáng, thu hút đông đảo du khách đến chiêm ngưỡng và chụp ảnh kỷ niệm.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 8474743417,
+    "lat": 15.9994308,
+    "lon": 108.2545831,
+    "tags": {
+      "name": "Bảo tàng Phật giáo",
+      "name:vi": "Bảo tàng Phật giáo",
+      "tourism": "museum",
+      "wikipedia": "https://www.qdnd.vn/xa-hoi/dan-toc-ton-giao/tin-tuc/noi-luu-giu-net-tinh-hoa-di-san-van-hoa-phat-giao-753496",
+      "short_description": "Bảo tàng Phật giáo là nơi trưng bày các hiện vật quý giá về Phật giáo Việt Nam, mang đến cái nhìn sâu sắc về văn hóa tâm linh.",
+      "title": "Bảo tàng Phật giáo - Kho tàng tâm linh",
+      "basic_info": {
+        "address": "Đường Sựvăn Hanh, Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+        "opening_hours": "9:00-17:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Hiện vật tại Bảo tàng Phật giáo"
+      },
+      "description_1": "Bảo tàng trưng bày tượng Phật, kinh sách và các vật phẩm Phật giáo từ nhiều thời kỳ, phản ánh sự phát triển của đạo Phật tại Việt Nam.",
+      "poem": "Phật pháp nhiệm màu lưu truyền, \nHiện vật kể chuyện, lòng vần thanh tịnh.",
+      "videos": "https://www.youtube.com/watch?v=cAGrbAKxQFw&pp=ygUYYuG6o28gdMOgbmcgcGjhuq10IGdpw6Fv",
+      "description_2": "Đây là điểm đến lý tưởng cho những ai muốn tìm hiểu về lịch sử và ý nghĩa sâu xa của Phật giáo trong đời sống người Việt.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 10154412164,
+    "lat": 15.9968339,
+    "lon": 107.9888036,
+    "tags": {
+      "name": "Fantasy Park",
+      "name:vi": "Fantasy Park",
+      "tourism": "theme_park",
+      "wikipedia": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-fantasy-park-13116",
+      "short_description": "Fantasy Park là công viên giải trí trong nhà lớn nhất Việt Nam, nằm trong khu du lịch Bà Nà Hills.",
+      "title": "Fantasy Park - Thế giới giải trí trên mây",
+      "basic_info": {
+        "address": "Bà Nà Hills, Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "8:30-18:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Khu trò chơi tại Fantasy Park"
+      },
+      "description_1": "Fantasy Park mang đến hàng trăm trò chơi đa dạng từ nhẹ nhàng đến mạo hiểm, phù hợp với mọi lứa tuổi trong không gian hiện đại.",
+      "poem": "Trò chơi rộn rã trên cao, \nMây vờn quanh núi, lòng bao thích mê.",
+      "videos": "https://www.youtube.com/watch?v=AkmmPlV0pkI&pp=ygUMZmFudGFzeSBwYXJr",
+      "description_2": "Nằm giữa khung cảnh Bà Nà Hills thơ mộng, công viên là điểm nhấn giải trí không thể bỏ qua khi ghé thăm khu du lịch này.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 10709724107,
+    "lat": 16.0009523,
+    "lon": 108.2666434,
+    "tags": {
+      "name": "Làng đá mỹ nghệ Non Nước",
+      "name:vi": "Làng đá mỹ nghệ Non Nước",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/L%C3%A0ng_%C4%91%C3%A1_m%E1%BB%B9_ngh%E1%BB%87_Non_N%C6%B0%E1%BB%9Bc",
+      "short_description": "Làng đá mỹ nghệ Non Nước là nơi nổi tiếng với các sản phẩm điêu khắc đá tinh xảo, mang đậm nét văn hóa truyền thống.",
+      "title": "Làng đá mỹ nghệ Non Nước - Nghệ thuật từ đá",
+      "basic_info": {
+        "address": "Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+        "opening_hours": "7:00-17:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Tác phẩm đá tại làng Non Nước"
+      },
+      "description_1": "Nằm dưới chân núi Ngũ Hành Sơn, làng đá Non Nước là nơi các nghệ nhân tài hoa biến những khối đá thô thành tác phẩm nghệ thuật sống động.",
+      "poem": "Đá thô hóa nét tinh hoa, \nNghệ nhân khéo léo, lòng ta say mê.",
+      "videos": ["https://youtu.be/Bw4pGnAsC2g?si=n29D4-Y_-hKRgei4"],
+      "description_2": "Du khách có thể tham quan, mua sắm các sản phẩm đá độc đáo và tìm hiểu quy trình chế tác truyền thống hàng trăm năm.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 10709738005,
+    "lat": 15.9867322,
+    "lon": 108.1772823,
+    "tags": {
+      "name": "Làng chiếu Cẩm Nê",
+      "name:vi": "Làng chiếu Cẩm Nê",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/S%E1%BB%B1_ki%E1%BB%87n_C%E1%BA%A9m_N%C3%AA#:~:text=S%E1%BB%B1%20ki%E1%BB%87n%20C%E1%BA%A9m%20N%C3%AA%20l%C3%A0,chi%E1%BA%BFn%20tranh%20th%E1%BB%9Di%20b%E1%BA%A5y%20gi%E1%BB%9D.",
+      "short_description": "Làng chiếu Cẩm Nê là nơi lưu giữ nghề dệt chiếu truyền thống với những sản phẩm thủ công đẹp mắt và bền bỉ.",
+      "title": "Làng chiếu Cẩm Nê - Di sản thủ công",
+      "basic_info": {
+        "address": "Cẩm Nê, Hòa Tiến, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Chiếu Cẩm Nê được phơi khô"
+      },
+      "description_1": "Làng chiếu Cẩm Nê nổi tiếng với những tấm chiếu được dệt từ cói, mang vẻ đẹp mộc mạc và giá trị văn hóa sâu sắc.",
+      "poem": "Chiếu trải bên thềm mát lành, \nTay nghề khéo léo, lòng thành kính yêu.",
+      "videos": ["https://youtu.be/CddR4s9kpOw?si=J3nYEITZx38JRgxA"],
+      "description_2": "Du khách có thể khám phá quy trình dệt chiếu và mua những sản phẩm thủ công độc đáo làm kỷ niệm.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 10709738105,
+    "lat": 16.1128315,
+    "lon": 108.1300902,
+    "tags": {
+      "name": "Làng nước mắm Nam Ô",
+      "name:vi": "Làng nước mắm Nam Ô",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/L%C3%A0ng_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Nam_%C3%94",
+      "short_description": "Làng nước mắm Nam Ô là nơi sản xuất nước mắm truyền thống nổi tiếng với hương vị đậm đà đặc trưng.",
+      "title": "Làng nước mắm Nam Ô - Hương vị biển cả",
+      "basic_info": {
+        "address": "Nam Ô, Liên Chiểu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Thùng nước mắm tại Nam Ô"
+      },
+      "description_1": "Làng Nam Ô mang đến trải nghiệm khám phá nghề làm nước mắm lâu đời, với những thùng gỗ ủ cá thơm lừng.",
+      "poem": "Mắm ủ bên thềm thơm ngát, \nBiển khơi gửi vị, lòng khách mê say.",
+      "videos": ["https://youtu.be/posLHl4r8xg?si=j8XLc35FXz5lTV6K"],
+      "description_2": "Du khách có thể tìm hiểu cách làm nước mắm và mua sản phẩm chính gốc để thưởng thức hoặc làm quà.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 11176025737,
+    "lat": 16.0607097,
+    "lon": 108.2200254,
+    "tags": {
+      "name": "Làng bích họa Đà Nẵng",
+      "name:vi": "Làng bích họa Đà Nẵng",
+      "tourism": "attraction",
+      "wikipedia": "https://www.traveloka.com/vi-vn/explore/destination/lang-bich-hoa-da-nang/210947",
+      "short_description": "Làng bích họa Đà Nẵng là khu phố nhỏ được tô điểm bởi những bức tranh tường sống động, mang lại không gian nghệ thuật độc đáo.",
+      "title": "Làng bích họa Đà Nẵng - Sắc màu nghệ thuật",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Bức tranh tường tại làng bích họa"
+      },
+      "description_1": "Những bức tường cũ kỹ được khoác áo mới bởi các bức bích họa đầy màu sắc, tái hiện đời sống và văn hóa Đà Nẵng.",
+      "poem": "Tranh vẽ tô điểm phố phường, \nSắc màu rực rỡ, lòng vương vấn hoài.",
+      "videos": ["https://youtu.be/ByKeSa8riN0?si=zLx0Ow1wGSVLxvhL"],
+      "description_2": "Đây là điểm check-in lý tưởng cho những ai yêu thích nhiếp ảnh và muốn khám phá nét đẹp hiện đại của thành phố.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 11359603957,
+    "lat": 15.9987986,
+    "lon": 108.2051036,
+    "tags": {
+      "name": "Chùa Nam Sơn",
+      "name:vi": "Chùa Nam Sơn",
+      "tourism": "attraction",
+      "wikipedia": "https://laodong.vn/du-lich/kham-pha/ve-tham-chua-nam-son-da-nang-tien-canh-giua-chon-phon-hoa-1075279.html",
+      "short_description": "Chùa Nam Sơn là ngôi chùa yên bình với kiến trúc độc đáo, mang đến không gian tâm linh thanh tịnh giữa lòng Đà Nẵng.",
+      "title": "Chùa Nam Sơn - Chốn bình yên giữa phố",
+      "basic_info": {
+        "address": "Cẩm Lệ, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Cổng chùa Nam Sơn"
+      },
+      "description_1": "Chùa Nam Sơn nổi bật với kiến trúc chạm khắc tinh tế và không gian xanh mát, là nơi lý tưởng để tìm kiếm sự an yên.",
+      "poem": "Chùa đứng lặng giữa trời xanh, \nHương trầm thoảng nhẹ, lòng thành thư thái.",
+      "videos": ["https://youtu.be/Di7F9EUgtBM?si=DocOaECcaY7hKl-1"],
+      "description_2": "Du khách có thể tham quan, thắp hương và thưởng thức không khí thanh tịnh giữa lòng thành phố nhộn nhịp.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 11529406569,
+    "lat": 16.0371449,
+    "lon": 108.2244066,
+    "tags": {
+      "name": "Chợ đêm Helio",
+      "name:vi": "Chợ đêm Helio",
+      "tourism": "attraction",
+      "wikipedia": "https://helio.vn/vi/news/cho-dem-helio-da-nang-thien-duong-am-thuc-ve-dem-lon-nhat-da-nang.html",
+      "short_description": "Chợ đêm Helio là thiên đường ẩm thực và mua sắm với không gian sôi động, thu hút đông đảo du khách mỗi đêm.",
+      "title": "Chợ đêm Helio - Đêm rực rỡ Đà Nẵng",
+      "basic_info": {
+        "address": "Đường 2 Tháng 9, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "17:00-23:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Gian hàng tại chợ đêm Helio"
+      },
+      "description_1": "Chợ đêm Helio mang đến trải nghiệm ẩm thực đường phố đa dạng, từ món ăn địa phương đến quốc tế, trong không gian đèn sáng lung linh.",
+      "poem": "Đêm về chợ sáng lung linh, \nẨm thực quyến rũ, lòng thành mê say.",
+      "videos": ["https://youtu.be/KcDYHN4pcI4?si=r9SMLAQd1Y08ug0K"],
+      "description_2": "Ngoài ăn uống, du khách còn có thể mua sắm quà lưu niệm và thưởng thức các màn biểu diễn nghệ thuật đường phố tại đây.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 11934169470,
+    "lat": 16.0432987,
+    "lon": 108.2259900,
+    "tags": {
+      "name": "Queen Cobra",
+      "name:vi": "Queen Cobra",
+      "tourism": "attraction",
+      "wikipedia": "https://sunworld.vn/da-nang-downtown/vui-choi-da-nang-downtown/queen-cobra",
+      "short_description": "Queen Cobra là một điểm tham quan độc đáo tại Đà Nẵng, nổi bật với trải nghiệm giải trí đầy hấp dẫn.",
+      "title": "Queen Cobra - Bí ẩn giữa lòng thành phố",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "18:00-22:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": ""
+      },
+      "description_1": "Queen Cobra mang đến không gian giải trí mới lạ, kết hợp giữa nghệ thuật và các hoạt động tương tác thú vị.",
+      "poem": "Rắn chúa ẩn mình trong đêm, \nBí ẩn quyến rũ, lòng mềm mê say.",
+      "videos": ["https://youtu.be/dXTgqi2Ltw0?si=DTNexi6kRU82W73g"],
+      "description_2": "Đây là điểm đến phù hợp cho những ai yêu thích khám phá và trải nghiệm những điều độc đáo trong đêm Đà Nẵng.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 12622064034,
+    "lat": 16.0039070,
+    "lon": 108.2660314,
+    "tags": {
+      "name": "Bảo tàng Ngũ Hành Sơn",
+      "name:vi": "Bảo tàng Ngũ Hành Sơn",
+      "tourism": "museum",
+      "wikipedia": "https://vi.wikipedia.org/wiki/B%E1%BA%A3o_t%C3%A0ng_v%C4%83n_h%C3%B3a_Ph%E1%BA%ADt_gi%C3%A1o",
+      "short_description": "Bảo tàng Ngũ Hành Sơn trưng bày các hiện vật liên quan đến lịch sử và văn hóa của khu vực núi đá nổi tiếng này.",
+      "title": "Bảo tàng Ngũ Hành Sơn - Kho tàng văn hóa",
+      "basic_info": {
+        "address": "Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+        "opening_hours": "7:00-17:00"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Hiện vật tại bảo tàng"
+      },
+      "description_1": "Bảo tàng lưu giữ những hiện vật quý giá, kể câu chuyện về sự hình thành và phát triển của Ngũ Hành Sơn qua hàng thế kỷ.",
+      "poem": "Núi đá lưu dấu thời gian, \nHiện vật kể chuyện, lòng vần kính mong.",
+      "videos": ["https://youtu.be/KwkCCDjCZNI?si=32Q5SYzZd7gX6JzZ"],
+      "description_2": "Đây là nơi lý tưởng để tìm hiểu về địa chất, lịch sử và nghệ thuật điêu khắc đá của vùng đất Non Nước.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "node",
+    "id": 12701675501,
+    "lat": 16.11418235097618,
+    "lon": 108.25573176096027,
+    "tags": {
+      "name": "Suối Đá",
+      "name:vi": "Suối Đá",
+      "tourism": "viewpoint",
+      "wikipedia": "https://vinpearl.com/vi/ghe-tham-suoi-da-da-nang-thuong-thuc-bua-tiec-am-nhac-tuyet-voi-cua-da",
+      "short_description": "Suối Đá Đà Nẵng là một điểm du lịch thiên nhiên hoang sơ, ẩn mình giữa núi rừng xanh mát.",
+      "title": "Suối Đá - Thiên nhiên hoang sơ giữa lòng Sơn Trà",
+      "basic_info": {
+        "address": "Bán đảo Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Dòng suối trong vắt tại Suối Đá"
+      },
+      "description_1": "Nằm cách trung tâm thành phố không xa, Suối Đá là nơi lý tưởng để tận hưởng thiên nhiên với dòng suối mát lạnh và những phiến đá lớn.",
+      "poem": "Suối chảy róc rách giữa ngàn, \nĐá nằm lặng lẽ, lòng vần yên vui.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=v-xvR7U-paM",
+          "caption": "Khám phá Suối Đá"
+        }
+      ],
+      "description_2": "Đây là điểm đến hoàn hảo cho dã ngoại, cắm trại và khám phá vẻ đẹp nguyên sơ của bán đảo Sơn Trà.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 204790989,
+    "bounds": {
+      "minlat": 16.0673824,
+      "minlon": 108.2138951,
+      "maxlat": 16.0689581,
+      "maxlon": 108.2151724
+    },
+    "nodes": [
+      2147663357,
+      728153458,
+      3514391352,
+      2147663358,
+      2147663359,
+      2147663357
+    ],
+    "geometry": [
+      { "lat": 16.0687444, "lon": 108.2138951 },
+      { "lat": 16.0674559, "lon": 108.2141529 },
+      { "lat": 16.0673824, "lon": 108.2142466 },
+      { "lat": 16.0675105, "lon": 108.2149138 },
+      { "lat": 16.0689581, "lon": 108.2151724 },
+      { "lat": 16.0687444, "lon": 108.2138951 }
+    ],
+    "tags": {
+      "name": "Chợ Cồn",
+      "name:vi": "Chợ Cồn",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_C%E1%BB%93n#:~:text=T%C3%AAn%20g%E1%BB%8Di%20%22ch%E1%BB%A3%20C%E1%BB%93n%22%20c%C3%B3,v%E1%BA%ADt%20li%E1%BB%87u%20ki%C3%AAn%20c%E1%BB%91%20h%C6%A1n.",
+      "short_description": "Chợ Cồn là khu chợ dân sinh đậm chất miền Trung, nổi tiếng với ẩm thực đường phố đa dạng.",
+      "title": "Chợ Cồn - Thiên đường ẩm thực miền Trung",
+      "basic_info": {
+        "address": "Đường Ông Ích Khiêm, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "7:00-19:00"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Gian hàng tại Chợ Cồn"
+      },
+      "description_1": "Chợ Cồn là nơi hội tụ các món ăn đặc sản như mì Quảng, bánh tráng cuốn thịt heo và hải sản tươi ngon.",
+      "poem": "Chợ rộn ràng giữa phố đông, \nẨm thực thơm lừng, lòng mong ghé vào.",
+      "videos": [
+        {
+          "url": "https://youtu.be/dlTwXSJZuto?si=tWCPiMfxiD_-63bO",
+          "caption": "Khám phá Chợ Cồn"
+        }
+      ],
+      "description_2": "Ngoài ẩm thực, chợ còn là nơi mua sắm đặc sản và trải nghiệm không gian sống động của người dân Đà Nẵng.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 302872188,
+    "bounds": {
+      "minlat": 16.0595495,
+      "minlon": 108.2225516,
+      "maxlat": 16.0607704,
+      "maxlon": 108.2235938
+    },
+    "nodes": [
+      3071555442,
+      3071555443,
+      3760254415,
+      3760254412,
+      3760254414,
+      3760254413,
+      3760254411,
+      3071555444,
+      3071555445,
+      3071555442
+    ],
+    "geometry": [
+      { "lat": 16.0607031, "lon": 108.2235938 },
+      { "lat": 16.0602812, "lon": 108.2235214 },
+      { "lat": 16.0600057, "lon": 108.2232731 },
+      { "lat": 16.0595495, "lon": 108.2229941 },
+      { "lat": 16.0597222, "lon": 108.2227286 },
+      { "lat": 16.0597969, "lon": 108.2227608 },
+      { "lat": 16.0599876, "lon": 108.2225516 },
+      { "lat": 16.0604966, "lon": 108.2231245 },
+      { "lat": 16.0607704, "lon": 108.2234911 },
+      { "lat": 16.0607031, "lon": 108.2235938 }
+    ],
+    "tags": {
+      "name": "Bảo tàng Nghệ thuật Điêu khắc Chăm Đà Nẵng",
+      "name:vi": "Bảo tàng Nghệ thuật Điêu khắc Chăm Đà Nẵng",
+      "tourism": "museum",
+      "wikipedia": "https://vi.wikipedia.org/wiki/B%E1%BA%A3o_t%C3%A0ng_%C4%90i%C3%AAu_kh%E1%BA%AFc_Ch%C4%83m_%C4%90%C3%A0_N%E1%BA%B5ng",
+      "title": "Bảo tàng Nghệ thuật Điêu khắc Chăm - Di sản Chăm Pa",
+      "short_description": "Bảo tàng Nghệ thuật Điêu khắc Chăm Đà Nẵng - Nơi lưu giữ bộ sưu tập hiện vật Chăm Pa quý giá nhất Việt Nam, trưng bày hơn 2.000 tác phẩm điêu khắc đá từ thế kỷ VII-XV. Khám phá vẻ đẹp huyền bí của nền văn hóa Chăm qua những tượng thần, phù điêu tinh xảo tại công trình kiến trúc Pháp cổ độc đáo này.",
+      "basic_info": {
+        "address": "Đường Bạch Đằng, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "7:00-17:30"
+      },
+      "image_1": {
+        "url": "",
+        "caption": "Tượng Chăm tại bảo tàng"
+      },
+      "description_1": "Bảo tàng là nơi lưu giữ hơn 2.000 hiện vật Chăm Pa, từ tượng thần Shiva đến phù điêu vũ nữ Apsara, mang đến cái nhìn sâu sắc về nền văn hóa cổ xưa.",
+      "poem": "Đá khắc lưu dấu ngàn năm, \nChăm Pa rực rỡ, lòng vần kính mong.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=OsHy7aS1dLQ",
+          "caption": "Khám phá Bảo tàng Nghệ thuật Điêu khắc Chăm"
+        }
+      ],
+      "description_2": "Công trình kiến trúc Pháp cổ kết hợp không gian trưng bày hiện đại khiến nơi đây trở thành điểm đến lý tưởng cho những ai yêu thích nghệ thuật và lịch sử.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 359114064,
+    "bounds": {
+      "minlat": 15.9924174,
+      "minlon": 107.9865055,
+      "maxlat": 15.9988440,
+      "maxlon": 107.9929379
+    },
+    "nodes": [
+      3638948097,
+      3638948112,
+      10154412165,
+      3638947390,
+      3638948128,
+      3638948104,
+      3638947384,
+      3638948118,
+      3638948094,
+      10154412447,
+      3638947376,
+      10154412448,
+      3638948109,
+      10154412449,
+      3638947388,
+      3638948125,
+      3638948102,
+      10154412166,
+      10154412167,
+      10154412170,
+      10154412171,
+      10154412175,
+      10154412174,
+      10154412173,
+      10154412172,
+      10154412169,
+      10154412168,
+      3638948097
+    ],
+    "geometry": [
+      { "lat": 15.9951752, "lon": 107.9904987 },
+      { "lat": 15.9954893, "lon": 107.9900615 },
+      { "lat": 15.9964120, "lon": 107.9904430 },
+      { "lat": 15.9970764, "lon": 107.9907870 },
+      { "lat": 15.9974048, "lon": 107.9905008 },
+      { "lat": 15.9976663, "lon": 107.9888606 },
+      { "lat": 15.9988440, "lon": 107.9877160 },
+      { "lat": 15.9988221, "lon": 107.9873699 },
+      { "lat": 15.9984431, "lon": 107.9868683 },
+      { "lat": 15.9977581, "lon": 107.9865171 },
+      { "lat": 15.9972557, "lon": 107.9865055 },
+      { "lat": 15.9969646, "lon": 107.9867605 },
+      { "lat": 15.9967278, "lon": 107.9873995 },
+      { "lat": 15.9961801, "lon": 107.9873748 },
+      { "lat": 15.9955080, "lon": 107.9880597 },
+      { "lat": 15.9957125, "lon": 107.9885292 },
+      { "lat": 15.9954447, "lon": 107.9889269 },
+      { "lat": 15.9955353, "lon": 107.9893374 },
+      { "lat": 15.9945718, "lon": 107.9902883 },
+      { "lat": 15.9942180, "lon": 107.9910347 },
+      { "lat": 15.9929711, "lon": 107.9915849 },
+      { "lat": 15.9924794, "lon": 107.9917019 },
+      { "lat": 15.9924174, "lon": 107.9922800 },
+      { "lat": 15.9927367, "lon": 107.9929379 },
+      { "lat": 15.9934692, "lon": 107.9926563 },
+      { "lat": 15.9938597, "lon": 107.9919581 },
+      { "lat": 15.9948757, "lon": 107.9914157 },
+      { "lat": 15.9951752, "lon": 107.9904987 }
+    ],
+    "tags": {
+      "name": "Sun World Bà Nà Hills",
+      "name:vi": "Sun World Bà Nà Hills",
+      "tourism": "theme_park",
+      "wikipedia": "https://banahills.sunworld.vn/",
+      "title": "Sun World Bà Nà Hills - Thành phố trên mây",
+      "short_description": "Sun World Bà Nà Hills - Thành phố trên mây nổi tiếng với hệ thống cầu vàng Golden Bridge độc đáo, làng Pháp cổ tích và vô vàn trải nghiệm giải trí đẳng cấp. Điểm đến lý tưởng để tránh nóng mùa hè, ngắm view biển mây và sống ảo cực chất!",
+      "basic_info": {
+        "address": "Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "8:00-17:00"
+      },
+      "image_1": {
+        "url": "..",
+        "caption": "Cầu Vàng tại Bà Nà Hills"
+      },
+      "description_1": "Sun World Bà Nà Hills mang đến không gian nghỉ dưỡng mát mẻ với Cầu Vàng nổi tiếng và kiến trúc Làng Pháp cổ kính giữa núi rừng hùng vĩ.",
+      "poem": "Mây vờn quanh núi cao ngàn, \nCầu Vàng lộng lẫy, lòng vần mê say.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=BrGe5bz2Duw",
+          "caption": "Khám phá Sun World Bà Nà Hills"
+        }
+      ],
+      "description_2": "Đây là điểm đến lý tưởng để tránh nóng, ngắm cảnh mây trời và trải nghiệm các hoạt động giải trí đẳng cấp giữa thiên nhiên.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 466418347,
+    "bounds": {
+      "minlat": 16.1877052,
+      "minlon": 108.1312528,
+      "maxlat": 16.1877891,
+      "maxlon": 108.1313271
+    },
+    "nodes": [
+      4612158964,
+      4612158965,
+      4612158966,
+      4612158967,
+      4612158964
+    ],
+    "geometry": [
+      { "lat": 16.1877163, "lon": 108.1313271 },
+      { "lat": 16.1877052, "lon": 108.1312676 },
+      { "lat": 16.1877779, "lon": 108.1312528 },
+      { "lat": 16.1877891, "lon": 108.1313124 },
+      { "lat": 16.1877163, "lon": 108.1313271 }
+    ],
+    "tags": {
+      "name": "Đèo Hải Vân",
+      "name:vi": "Đèo Hải Vân",
+      "tourism": "attraction",
+      "title": "Đèo Hải Vân - Thiên hạ đệ nhất hùng quan",
+      "short_description": "Đèo Hải Vân - Thiên hạ đệ nhất hùng quan nối liền Đà Nẵng và Huế, nổi tiếng với cảnh sắc núi biển hùng vĩ, đường đèo quanh co uốn lượn giữa mây trời. Điểm check-in lý tưởng để ngắm toàn cảnh vịnh Lăng Cô và biển Đà Nẵng từ trên cao.",
+      "basic_info": {
+        "address": "Đèo Hải Vân, Liên Chiểu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Đèo Hải Vân nhìn từ trên cao"
+      },
+      "description_1": "Đèo Hải Vân nổi tiếng với cung đường uốn lượn giữa núi rừng và biển cả, mang đến khung cảnh hùng vĩ và thơ mộng hiếm có.",
+      "poem": "Đèo vắt ngang núi trời xanh, \nMây ngàn gió thoảng, lòng thành mê ly.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=tMt8pMoCaHE",
+          "caption": "Khám phá Đèo Hải Vân"
+        }
+      ],
+      "description_2": "Điểm check-in lý tưởng này cho phép du khách ngắm vịnh Lăng Cô và biển Đà Nẵng từ độ cao 500m, giữa không gian mây trời huyền ảo.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 486703075,
+    "bounds": {
+      "minlat": 16.1001677,
+      "minlon": 108.2776914,
+      "maxlat": 16.1004655,
+      "maxlon": 108.2780136
+    },
+    "nodes": [
+      4792758063,
+      11171115290,
+      4208224546,
+      11171115322,
+      4208224547,
+      11171115295,
+      4792758064,
+      4792758063
+    ],
+    "geometry": [
+      { "lat": 16.1003814, "lon": 108.2780136 },
+      { "lat": 16.1001886, "lon": 108.2779409 },
+      { "lat": 16.1001677, "lon": 108.2779330 },
+      { "lat": 16.1002139, "lon": 108.2778002 },
+      { "lat": 16.1002518, "lon": 108.2776914 },
+      { "lat": 16.1002803, "lon": 108.2777022 },
+      { "lat": 16.1004655, "lon": 108.2777720 },
+      { "lat": 16.1003814, "lon": 108.2780136 }
+    ],
+    "tags": {
+      "name": "Chùa Linh Ứng",
+      "name:vi": "Chùa Linh Ứng",
+      "tourism": "attraction",
+      "wikipedia" : "https://vinpearl.com/vi/ghe-tham-chua-linh-ung-da-nang-chon-linh-thieng-giua-thien-nhien-ky-vi",
+      "title": "Chùa Linh Ứng - Tâm linh giữa biển trời",
+      "short_description": "Chùa Linh Ứng Bãi Bụt - Ngôi chùa linh thiêng bậc nhất Đà Nẵng tọa lạc trên bán đảo Sơn Trà, nổi tiếng với tượng Phật Quan Thế Âm cao 67m hướng ra biển. Địa điểm vừa là chốn tâm linh thanh tịnh, vừa có view triệu đô ngắm trọn vịnh Đà Nẵng.",
+      "basic_info": {
+        "address": "Bán đảo Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "5:00-19:00"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Tượng Quan Âm tại Chùa Linh Ứng"
+      },
+      "description_1": "Chùa Linh Ứng nổi bật với tượng Quan Âm cao 67m, mang ý nghĩa che chở cho ngư dân, kết hợp kiến trúc truyền thống và hiện đại.",
+      "poem": "Chùa đứng giữa núi trời xanh, \nQuan Âm soi bóng, lòng thành an nhiên.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=8Gjv6MTRZiI",
+          "caption": "Khám phá Chùa Linh Ứng Bãi Bụt"
+        }
+      ],
+      "description_2": "Từ chùa, du khách có thể ngắm toàn cảnh vịnh Đà Nẵng và tận hưởng không gian thanh tịnh giữa thiên nhiên Sơn Trà.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 667422708,
+    "bounds": {
+      "minlat": 16.0382596,
+      "minlon": 108.2247149,
+      "maxlat": 16.0440668,
+      "maxlon": 108.2295834
+    },
+    "nodes": [
+      6249150417,
+      12320250998,
+      6249150418,
+      12301789818,
+      6249150419,
+      6249150420,
+      12293580116,
+      12293580150,
+      12293580151,
+      12293580154,
+      12293580155,
+      11099482409,
+      12293580162,
+      12293580163,
+      12293580165,
+      12293580167,
+      12293580148,
+      6249150421,
+      6249150422,
+      6249150423,
+      6249150424,
+      11099482362,
+      11099482363,
+      6249150425,
+      6249150426,
+      6038530473,
+      6249150060,
+      6249150053,
+      6249150068,
+      6249150061,
+      6249150052,
+      6249150045,
+      133846198,
+      6249150044,
+      6249150038,
+      6249150241,
+      11945081282,
+      6249150251,
+      6249150258,
+      6249150242,
+      6249150245,
+      133372611,
+      6249150248,
+      6249150247,
+      6249150246,
+      8918364970,
+      8918364969,
+      8918364968,
+      8918364967,
+      8918364966,
+      8918364965,
+      8918364963,
+      8918364964,
+      132988712,
+      8918364962,
+      132920431,
+      6249150435,
+      6249150436,
+      132567541,
+      6249150437,
+      6249150438,
+      132492262,
+      8918364954,
+      8918364955,
+      8918364956,
+      133272180,
+      6249150451,
+      6249150450,
+      6249150449,
+      6249150448,
+      6249150447,
+      6249150446,
+      6249150445,
+      6038473403,
+      6249150444,
+      6249150427,
+      12320250999,
+      6249150417
+    ],
+    "geometry": [
+      { "lat": 16.0402654, "lon": 108.2256588 },
+      { "lat": 16.0397735, "lon": 108.2257200 },
+      { "lat": 16.0382596, "lon": 108.2259082 },
+      { "lat": 16.0383503, "lon": 108.2266758 },
+      { "lat": 16.0384700, "lon": 108.2276898 },
+      { "lat": 16.0385238, "lon": 108.2276898 },
+      { "lat": 16.0385868, "lon": 108.2283140 },
+      { "lat": 16.0385943, "lon": 108.2283873 },
+      { "lat": 16.0386085, "lon": 108.2285288 },
+      { "lat": 16.0386140, "lon": 108.2285827 },
+      { "lat": 16.0386176, "lon": 108.2286263 },
+      { "lat": 16.0386228, "lon": 108.2286699 },
+      { "lat": 16.0386248, "lon": 108.2286938 },
+      { "lat": 16.0386310, "lon": 108.2287507 },
+      { "lat": 16.0386359, "lon": 108.2287920 },
+      { "lat": 16.0386539, "lon": 108.2289363 },
+      { "lat": 16.0386610, "lon": 108.2290094 },
+      { "lat": 16.0387146, "lon": 108.2295783 },
+      { "lat": 16.0391304, "lon": 108.2295478 },
+      { "lat": 16.0393114, "lon": 108.2295834 },
+      { "lat": 16.0403025, "lon": 108.2294846 },
+      { "lat": 16.0402947, "lon": 108.2292002 },
+      { "lat": 16.0403797, "lon": 108.2291953 },
+      { "lat": 16.0403768, "lon": 108.2291497 },
+      { "lat": 16.0410237, "lon": 108.2290693 },
+      { "lat": 16.0410297, "lon": 108.2289937 },
+      { "lat": 16.0410103, "lon": 108.2288509 },
+      { "lat": 16.0410030, "lon": 108.2288062 },
+      { "lat": 16.0409639, "lon": 108.2284156 },
+      { "lat": 16.0409598, "lon": 108.2283719 },
+      { "lat": 16.0409176, "lon": 108.2279817 },
+      { "lat": 16.0409120, "lon": 108.2279378 },
+      { "lat": 16.0409014, "lon": 108.2278134 },
+      { "lat": 16.0411198, "lon": 108.2277836 },
+      { "lat": 16.0413238, "lon": 108.2277520 },
+      { "lat": 16.0414956, "lon": 108.2277295 },
+      { "lat": 16.0415615, "lon": 108.2277244 },
+      { "lat": 16.0415817, "lon": 108.2277228 },
+      { "lat": 16.0416335, "lon": 108.2276568 },
+      { "lat": 16.0417308, "lon": 108.2276906 },
+      { "lat": 16.0419659, "lon": 108.2276768 },
+      { "lat": 16.0421309, "lon": 108.2276364 },
+      { "lat": 16.0422502, "lon": 108.2275984 },
+      { "lat": 16.0423556, "lon": 108.2275509 },
+      { "lat": 16.0425023, "lon": 108.2274515 },
+      { "lat": 16.0425612, "lon": 108.2273960 },
+      { "lat": 16.0426140, "lon": 108.2273341 },
+      { "lat": 16.0427101, "lon": 108.2271667 },
+      { "lat": 16.0427596, "lon": 108.2270936 },
+      { "lat": 16.0428290, "lon": 108.2270250 },
+      { "lat": 16.0429104, "lon": 108.2269653 },
+      { "lat": 16.0431166, "lon": 108.2266812 },
+      { "lat": 16.0431613, "lon": 108.2266329 },
+      { "lat": 16.0432184, "lon": 108.2266041 },
+      { "lat": 16.0432685, "lon": 108.2265926 },
+      { "lat": 16.0433216, "lon": 108.2265877 },
+      { "lat": 16.0434927, "lon": 108.2265682 },
+      { "lat": 16.0435461, "lon": 108.2265390 },
+      { "lat": 16.0435486, "lon": 108.2264114 },
+      { "lat": 16.0435996, "lon": 108.2263506 },
+      { "lat": 16.0436010, "lon": 108.2262534 },
+      { "lat": 16.0436222, "lon": 108.2262039 },
+      { "lat": 16.0436588, "lon": 108.2261667 },
+      { "lat": 16.0437091, "lon": 108.2261515 },
+      { "lat": 16.0439610, "lon": 108.2261138 },
+      { "lat": 16.0440668, "lon": 108.2260135 },
+      { "lat": 16.0439202, "lon": 108.2259665 },
+      { "lat": 16.0438185, "lon": 108.2258751 },
+      { "lat": 16.0436640, "lon": 108.2258143 },
+      { "lat": 16.0436486, "lon": 108.2257132 },
+      { "lat": 16.0438231, "lon": 108.2256739 },
+      { "lat": 16.0439766, "lon": 108.2254730 },
+      { "lat": 16.0438823, "lon": 108.2247149 },
+      { "lat": 16.0423949, "lon": 108.2248635 },
+      { "lat": 16.0420964, "lon": 108.2248982 },
+      { "lat": 16.0421526, "lon": 108.2254379 },
+      { "lat": 16.0417637, "lon": 108.2254834 },
+      { "lat": 16.0402654, "lon": 108.2256588 }
+    ],
+    "tags": {
+      "name": "Da Nang Downtown (Asia Park - Công viên Châu Á cũ)",
+      "name:vi": "Da Nang Downtown (Asia Park - Công viên Châu Á cũ)",
+      "tourism": "theme_park",
+      "wikipedia": "https://sunworld.vn/da-nang-downtown",
+      "short_description": "Da Nang Downtown (Asia Park - Công viên Châu Á cũ) là TÂM ĐIỂM MUA SẮM, NGHỆ THUẬT, VUI CHƠI GIẢI TRÍ MỚI CỦA ĐÀ NẴNG với tổ hợp ALL-IN-ONE đa trong một - nằm tại vị trí đắc địa ngay trung tâm, hành trình đa giác quan của những trải nghiệm mãn nhãn, sôi động, sáng tạo và đậm chất thành phố biển hiện đại.",
+      "title": "Da Nang Downtown - Thế giới giải trí trung tâm",
+      "basic_info": {
+        "address": "1 Phan Đăng Lưu, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "15:00-22:00"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Vòng quay Sun Wheel tại Da Nang Downtown"
+      },
+      "description_1": "Da Nang Downtown mang đến trải nghiệm giải trí đa dạng với vòng quay Sun Wheel nổi tiếng và không gian văn hóa Á Đông độc đáo.",
+      "poem": "Vòng quay rực sáng trời đêm, \nGiải trí rộn ràng, lòng mềm mê say.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=a8HRXucUA0w",
+          "caption": "Khám phá Da Nang Downtown"
+        }
+      ],
+      "description_2": "Nơi đây kết hợp mua sắm, ẩm thực và vui chơi, trở thành điểm đến sôi động giữa lòng thành phố Đà Nẵng hiện đại.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 683416736,
+    "bounds": {
+      "minlat": 15.9945877,
+      "minlon": 107.9957986,
+      "maxlat": 15.9952608,
+      "maxlon": 107.9966623
+    },
+    "nodes": [
+      6401160565,
+      6401160564,
+      6401160563,
+      6401160562,
+      6401160561,
+      6401160560,
+      6401160559,
+      6401160558,
+      6401160556
+    ],
+    "geometry": [
+      { "lat": 15.9945877, "lon": 107.9965791 },
+      { "lat": 15.9946470, "lon": 107.9966193 },
+      { "lat": 15.9947450, "lon": 107.9966623 },
+      { "lat": 15.9948765, "lon": 107.9966515 },
+      { "lat": 15.9950003, "lon": 107.9965684 },
+      { "lat": 15.9950957, "lon": 107.9964048 },
+      { "lat": 15.9951807, "lon": 107.9961768 },
+      { "lat": 15.9952529, "lon": 107.9959354 },
+      { "lat": 15.9952608, "lon": 107.9957986 }
+    ],
+    "tags": {
+      "name": "Cầu Vàng",
+      "name:vi": "Cầu Vàng",
+      "tourism": "attraction",
+      "wikipedia": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_V%C3%A0ng",
+      "short_description": "Cầu Vàng (Golden Bridge) - Kiệt tác kiến trúc gây sốt toàn cầu với đôi bàn tay khổng lồ nâng đỡ cây cầu dài 150m ở độ cao 1.414m. Điểm check-in triệu like tại Sun World Ba Na Hills, Đà Nẵng, nơi bạn có thể đi giữa mây trời và ngắm toàn cảnh núi rừng hùng vĩ.",
+      "title": "Cầu Vàng - Kiệt tác giữa mây trời",
+      "basic_info": {
+        "address": "Bà Nà Hills, Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam",
+        "opening_hours": "8:00-17:00"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Cầu Vàng với đôi tay khổng lồ"
+      },
+      "description_1": "Cầu Vàng nổi bật với thiết kế đôi bàn tay đá nâng đỡ cây cầu dài 150m, mang đến cảm giác như bước giữa mây trời ở độ cao 1.400m.",
+      "poem": "Tay đá nâng cầu vàng tươi, \nMây ngàn lộng lẫy, lòng người mê ly.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=zDuRWVVXfVk",
+          "caption": "Khám phá Cầu Vàng Bà Nà Hills"
+        }
+      ],
+      "description_2": "Đây là điểm check-in nổi tiếng thế giới, mang đến tầm nhìn ngoạn mục và trải nghiệm độc đáo giữa thiên nhiên hùng vĩ.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 694831926,
+    "bounds": {
+      "minlat": 16.0608864,
+      "minlon": 108.2243387,
+      "maxlat": 16.0614501,
+      "maxlon": 108.2314575
+    },
+    "nodes": [
+      6525623013,
+      11161070761,
+      2988146962,
+      2988146956,
+      6525623010,
+      2990909266,
+      2990909267,
+      2990909268,
+      11161077291,
+      6525623011,
+      11161070777,
+      2988146961,
+      2988146985,
+      11161070776,
+      6525623012,
+      2990909263,
+      2990909261,
+      6525623013
+    ],
+    "geometry": [
+      { "lat": 16.0608873, "lon": 108.2243510 },
+      { "lat": 16.0609061, "lon": 108.2243506 },
+      { "lat": 16.0609809, "lon": 108.2243490 },
+      { "lat": 16.0611364, "lon": 108.2243422 },
+      { "lat": 16.0612000, "lon": 108.2243387 },
+      { "lat": 16.0612157, "lon": 108.2243822 },
+      { "lat": 16.0612164, "lon": 108.2244034 },
+      { "lat": 16.0612171, "lon": 108.2244251 },
+      { "lat": 16.0614081, "lon": 108.2301755 },
+      { "lat": 16.0614501, "lon": 108.2314398 },
+      { "lat": 16.0614280, "lon": 108.2314409 },
+      { "lat": 16.0613629, "lon": 108.2314441 },
+      { "lat": 16.0612092, "lon": 108.2314498 },
+      { "lat": 16.0611329, "lon": 108.2314559 },
+      { "lat": 16.0611129, "lon": 108.2314575 },
+      { "lat": 16.0608904, "lon": 108.2244466 },
+      { "lat": 16.0608864, "lon": 108.2244050 },
+      { "lat": 16.0608873, "lon": 108.2243510 }
+    ],
+    "tags": {
+      "name": "Cầu Rồng",
+      "name:vi": "Cầu Rồng",
+      "tourism": "attraction",
+      "short_description": "Cầu Rồng Đà Nẵng - Biểu tượng kiến trúc độc đáo bắc qua sông Hàn, nổi tiếng với màn trình diễn phun lửa và phun nước ấn tượng vào cuối tuần. Cây cầu được thiết kế như một con rồng vàng uốn lượn, trở thành điểm check-in không thể bỏ qua khi đến Đà Nẵng.",
+      "youtube_url": "https://www.youtube.com/watch?v=I5dooJoebFY",
+      "img_url": "...",
+      "title": "Cầu Rồng - Biểu tượng rồng vàng sông Hàn",
+      "basic_info": {
+        "address": "Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "Cả ngày (phun lửa/phun nước: T7, CN 21:00-22:00)"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Cầu Rồng phun lửa về đêm"
+      },
+      "description_1": "Cầu Rồng với hình dáng rồng vàng uốn lượn dài 666m là biểu tượng kiến trúc độc đáo, nổi bật với màn phun lửa và phun nước cuối tuần.",
+      "poem": "Rồng vàng bay lượn sông Hàn, \nLửa phun rực rỡ, lòng vần mê say.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=I5dooJoebFY",
+          "caption": "Khám phá Cầu Rồng Đà Nẵng"
+        }
+      ],
+      "description_2": "Cầu không chỉ là công trình giao thông mà còn là điểm ngắm cảnh và check-in nổi tiếng, đặc biệt khi đèn LED thắp sáng về đêm.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 1204195285,
+    "bounds": {
+      "minlat": 16.0617414,
+      "minlon": 108.2310738,
+      "maxlat": 16.0622766,
+      "maxlon": 108.2329572
+    },
+    "nodes": [
+      11161018602,
+      11161018603,
+      11161018604,
+      11161108326,
+      11161108305,
+      11161108306,
+      11161108307,
+      11161108334,
+      11161108308,
+      6521277695,
+      11161219347,
+      11161108309,
+      11161108310,
+      11161108311,
+      11161108312,
+      11161108313,
+      11161108314,
+      8236792786,
+      8236792787,
+      11161108315,
+      11161108316,
+      11161108317,
+      11161108318,
+      11161018602
+    ],
+    "geometry": [
+      { "lat": 16.0621097, "lon": 108.2310770 },
+      { "lat": 16.0620773, "lon": 108.2310738 },
+      { "lat": 16.0619989, "lon": 108.2310823 },
+      { "lat": 16.0620013, "lon": 108.2311174 },
+      { "lat": 16.0620427, "lon": 108.2317368 },
+      { "lat": 16.0620092, "lon": 108.2318119 },
+      { "lat": 16.0619345, "lon": 108.2318414 },
+      { "lat": 16.0617747, "lon": 108.2318462 },
+      { "lat": 16.0617540, "lon": 108.2318468 },
+      { "lat": 16.0617414, "lon": 108.2319496 },
+      { "lat": 16.0617549, "lon": 108.2320200 },
+      { "lat": 16.0617592, "lon": 108.2320426 },
+      { "lat": 16.0619757, "lon": 108.2320292 },
+      { "lat": 16.0620376, "lon": 108.2320613 },
+      { "lat": 16.0620633, "lon": 108.2321069 },
+      { "lat": 16.0621329, "lon": 108.2329572 },
+      { "lat": 16.0621929, "lon": 108.2329488 },
+      { "lat": 16.0622766, "lon": 108.2329483 },
+      { "lat": 16.0622094, "lon": 108.2319622 },
+      { "lat": 16.0622155, "lon": 108.2318744 },
+      { "lat": 16.0621974, "lon": 108.2317743 },
+      { "lat": 16.0621742, "lon": 108.2317475 },
+      { "lat": 16.0621510, "lon": 108.2316939 },
+      { "lat": 16.0621097, "lon": 108.2310770 }
+    ],
+    "tags": {
+      "name": "Chợ Đêm Sơn Trà",
+      "name:vi": "Chợ Đêm Sơn Trà",
+      "tourism": "attraction",
+      "short_description": "Nằm dọc bãi biển Phạm Văn Đồng, chợ đêm Sơn Trà là điểm đến không thể bỏ qua cho những ai muốn thưởng thức hải sản tươi sống giữa không gian biển đầy gió. Khác với những khu chợ đêm khác, nơi đây mang đậm chất của một làng chài truyền thống với những sạp hàng bày bán hải sản mới bắt lên từ biển cùng mùi vị nướng thơm lừng cả góc phố.",
+      "title": "Chợ Đêm Sơn Trà - Hương vị biển cả",
+      "basic_info": {
+        "address": "99 Cao Bá Quát, Sơn Trà, Đà Nẵng, Việt Nam",
+        "opening_hours": "17:00-23:00"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Hải sản nướng tại Chợ Đêm Sơn Trà"
+      },
+      "description_1": "Chợ Đêm Sơn Trà mang đậm chất làng chài với hải sản tươi sống được nướng thơm lừng, hòa cùng không gian gió biển mát lành.",
+      "poem": "Biển đêm thơm lừng hải sản, \nChợ rộn ràng vui, lòng vần thích mê.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=3_zW9Z18Ovc",
+          "caption": "Khám phá Chợ Đêm Sơn Trà"
+        }
+      ],
+      "description_2": "Đây là điểm đến lý tưởng để thưởng thức ẩm thực miền Trung và mua sắm đặc sản biển trong không gian thoáng đãng bên bãi biển Phạm Văn Đồng.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  },
+  {
+    "type": "way",
+    "id": 1368599361,
+    "bounds": {
+      "minlat": 16.0741836,
+      "minlon": 108.2236000,
+      "maxlat": 16.0754672,
+      "maxlon": 108.2244526
+    },
+    "nodes": [
+      12675380124,
+      12675380125,
+      12675380126,
+      12675380127,
+      12675380124
+    ],
+    "geometry": [
+      { "lat": 16.0753634, "lon": 108.2236000 },
+      { "lat": 16.0754672, "lon": 108.2242144 },
+      { "lat": 16.0742942, "lon": 108.2244526 },
+      { "lat": 16.0741836, "lon": 108.2237845 },
+      { "lat": 16.0753634, "lon": 108.2236000 }
+    ],
+    "tags": {
+      "name": "Bảo tàng Đà Nẵng",
+      "name:vi": "Bảo tàng Đà Nẵng",
+      "tourism": "museum",
+      "wikipedia": "https://baotangdanang.vn/",
+      "short_description": "Bảo Tàng Đà Nẵng - Nơi lưu giữ những câu chuyện sống động về lịch sử, văn hóa và con người xứ Quảng qua hệ thống hiện vật đa dạng từ thời tiền sử đến hiện đại. Địa điểm lý tưởng để khám phá văn hóa Chăm Pa, di sản dân tộc và những trang sử hào hùng của thành phố biển.",
+      "title": "Bảo tàng Đà Nẵng - Hành trình lịch sử xứ Quảng",
+      "basic_info": {
+        "address": "42 Bạch Đằng, Hải Châu, Đà Nẵng, Việt Nam",
+        "opening_hours": "8:00-17:00 (đóng cửa thứ Hai)"
+      },
+      "image_1": {
+        "url": "...",
+        "caption": "Hiện vật tại Bảo tàng Đà Nẵng"
+      },
+      "description_1": "Bảo tàng Đà Nẵng lưu giữ hơn 2.500 hiện vật, từ đồ gốm Sa Huỳnh đến kỷ vật kháng chiến, kể câu chuyện lịch sử và văn hóa xứ Quảng.",
+      "poem": "Lịch sử lưu dấu ngàn năm, \nHiện vật kể chuyện, lòng vần kính mong.",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=dPDFnqmg8gY",
+          "caption": "Khám phá Bảo tàng Đà Nẵng"
+        }
+      ],
+      "description_2": "Với công nghệ AR và kiến trúc Pháp cổ, đây là nơi lý tưởng để khám phá quá khứ và sống ảo giữa lòng thành phố.",
+      "image_2": {
+        "url": "",
+        "caption": ""
+      }
+    }
+  } 
+    ]
+  }
+  
+  

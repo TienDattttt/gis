@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 191.1 85.5% 45.3%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 34.3 92.1% 54.3%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 191.1 85.5% 45.3%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 34.3 92.1% 54.3%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-['Inter',_sans-serif];
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Rubik',_sans-serif] font-medium text-tourigo-dark;
+  }
+}
+
+.tourigo-container {
+  @apply container mx-auto px-4 md:px-6;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold mb-2 text-tourigo-dark;
+}
+
+.section-subtitle {
+  @apply text-base text-gray-500 mb-8;
+}
+
+.btn-primary {
+  @apply bg-tourigo-primary hover:bg-tourigo-dark text-white py-3 px-6 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply bg-tourigo-secondary hover:bg-tourigo-dark text-white py-3 px-6 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border-2 border-tourigo-primary text-tourigo-primary hover:bg-tourigo-primary hover:text-white py-[10px] px-6 rounded-lg font-medium transition-all duration-300;
+}
+
+.tour-card {
+  @apply bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300;
+}
+
+.destination-card {
+  @apply relative overflow-hidden rounded-xl;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tourigo-primary;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  animation: fade-down 0.5s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
