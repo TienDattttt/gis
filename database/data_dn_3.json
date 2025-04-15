@@ -236,7 +236,7 @@
         "opening_hours": "15:00-22:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/helio_1.jpg",
         "caption": "Khu vui chơi tại Helio Center"
       },
       "description_1": "Helio Center mang đến không gian giải trí đa dạng với khu trò chơi trong nhà, chợ đêm ẩm thực và các sự kiện ngoài trời đầy màu sắc.",
@@ -244,8 +244,8 @@
       "videos": "https://www.youtube.com/watch?v=EmWYc0TtQGI",
       "description_2": "Đây là điểm đến lý tưởng cho các gia đình, nhóm bạn trẻ với khu vực trò chơi hiện đại và hàng loạt món ăn đặc sản miền Trung.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/helio_2.jpg",
+        "caption": "Helio Center"
       }
     }
   },
@@ -266,7 +266,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cachephoarong_1.jpg",
         "caption": "Tượng Cá Chép Hóa Rồng về đêm"
       },
       "description_1": "Nằm bên bờ sông Hàn, tượng Cá Chép Hóa Rồng được chế tác tinh xảo, mang ý nghĩa phong thủy về sự thịnh vượng và vươn lên.",
@@ -274,8 +274,8 @@
       "videos": "https://www.youtube.com/watch?v=_bq7WWfTfx8",
       "description_2": "Vào ban đêm, tượng được thắp sáng lung linh, trở thành điểm check-in nổi bật cho du khách và người dân địa phương.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cachephoarong_2.jpg",
+        "caption": "Tượng Cá Chép Hóa Rồng"
       }
     }
   },
@@ -296,7 +296,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cautienson_1.jpg",
         "caption": "Cầu Tiên Sơn nhìn từ xa"
       },
       "description_1": "Cầu Tiên Sơn với thiết kế hiện đại, không chỉ là tuyến giao thông quan trọng mà còn là điểm nhấn kiến trúc trong lòng thành phố.",
@@ -304,8 +304,8 @@
       "videos": "https://www.youtube.com/watch?v=AQDteHdjSkE&pp=ygUTY-G6p3UgdGnDqm4gc8ahbiBydg%3D%3D",
       "description_2": "Từ trên cầu, du khách có thể ngắm nhìn dòng sông Hàn thơ mộng và những tòa nhà cao tầng của Đà Nẵng hiện đại.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cautienson_2.jpg",
+        "caption": "Cầu Tiên Sơn"
       }
     }
   },
@@ -326,16 +326,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cautranthily_1.jpg",
         "caption": "Cầu Trần Thị Lý về đêm"
       },
       "description_1": "Cầu Trần Thị Lý nổi bật với trụ tháp nghiêng hình cánh buồm, tượng trưng cho khát vọng vươn xa của thành phố biển Đà Nẵng.",
       "poem": "Cánh buồm nghiêng giữa trời xanh, \nSông Hàn lộng lẫy, lòng thành say mê.",
-      "videos": [],
+      "videos": "https://www.youtube.com/watch?v=xkrQR9Hthys",
       "description_2": "Vào ban đêm, cầu được chiếu sáng rực rỡ, tạo nên một khung cảnh lung linh phản chiếu trên mặt nước sông Hàn.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cautranthily_2.jpg",
+        "caption": "Cầu Trần Thị Lý"
       }
     }
   },
@@ -356,16 +356,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cauthuanphuoc_1.jpg",
         "caption": "Cầu Thuận Phước nhìn từ xa"
       },
       "description_1": "Với thiết kế dây văng hiện đại, cầu Thuận Phước không chỉ là công trình giao thông quan trọng mà còn là điểm nhấn kiến trúc của Đà Nẵng.",
       "poem": "Cầu vươn xa tới biển ngàn, \nDây văng lộng lẫy, nối tràn ước mơ.",
-      "videos": "https://www.youtube.com/watch?v=Qkb7_nkpZp0",
+      "videos": "https://www.youtube.com/watch?v=avRZ8m_Jx_E",
       "description_2": "Vào ban đêm, cầu sáng rực với hệ thống đèn chiếu sáng, tạo nên một cảnh tượng huyền ảo bên vịnh Đà Nẵng.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cauthuanphuoc_2.jpg",
+        "caption": "Cầu Thuận Phước"
       }
     }
   },
@@ -386,7 +386,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/caunguyenvantroi_1.jpg",
         "caption": "Cầu Nguyễn Văn Trỗi nhìn từ bờ sông"
       },
       "description_1": "Được xây dựng từ thập niên 1960, cầu Nguyễn Văn Trỗi mang dấu ấn lịch sử với thiết kế thép đơn sơ nhưng bền bỉ qua thời gian.",
@@ -394,8 +394,8 @@
       "videos": "https://www.youtube.com/watch?v=NeJtQvOScsc&pp=ygUdY-G6p3Ugbmd1eeG7hW4gdsSDbiB0cuG7l2kgcnY%3D",
       "description_2": "Hiện nay, cầu được giữ lại như một di sản, trở thành điểm check-in hoài cổ giữa lòng thành phố hiện đại.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/caunguyenvantroi_2.jpg",
+        "caption": "Cầu Nguyễn Văn Trỗi"
       }
     }
   },
@@ -417,16 +417,16 @@
         "opening_hours": "8:00-17:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/nuithantai_1.jpg",
         "caption": "Suối nước nóng tại Núi Thần Tài"
       },
       "description_1": "Núi Thần Tài mang đến trải nghiệm tắm suối nước nóng tự nhiên giữa rừng xanh, kết hợp với các trò chơi nước và công viên khủng long độc đáo.",
       "poem": "Suối nóng tuôn chảy giữa ngàn, \nThiên nhiên ôm ấp, lòng vần thư thai.",
-      "videos": "https://www.youtube.com/watch?v=e3z7W7P9w5M&pp=ygUYc3Xhu5FpIG7Ds25nIHRo4bqnbiB0w6Bp",
+      "videos": "https://www.youtube.com/watch?v=Q01mX-mcgeY",
       "description_2": "Đây là điểm đến lý tưởng để thư giãn, tái tạo năng lượng và khám phá thiên nhiên trong không gian yên bình.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/nuithantai_2.jpg",
+        "caption": "Núi Thần Tài"
       }
     }
   },
@@ -447,7 +447,7 @@
         "opening_hours": "7:00-17:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/suoiluong_1.jpg",
         "caption": "Dòng suối tại Suối Lương"
       },
       "description_1": "Suối Lương nổi bật với dòng suối trong lành chảy qua những tảng đá lớn, bên cạnh khu vực tái hiện văn hóa dân tộc Tây Nguyên đầy sắc màu.",
@@ -455,8 +455,8 @@
       "videos": "https://www.youtube.com/watch?v=lO-MRP1XbEU&pp=ygUOc3Xhu5FpIGzGsMahbmc%3D",
       "description_2": "Du khách có thể tắm suối, thưởng thức ẩm thực địa phương và khám phá các công trình kiến trúc độc đáo tại đây.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/suoiluong_2.jpg",
+        "caption": "Suối Lương"
       }
     }
   },
@@ -478,7 +478,7 @@
         "opening_hours": "9:00-18:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/baotang3d_1.jpg",
         "caption": "Tác phẩm 3D tại bảo tàng"
       },
       "description_1": "Với hàng trăm bức tranh 3D được vẽ tỉ mỉ, bảo tàng mang đến không gian tương tác thú vị cho du khách tạo ra những bức ảnh sáng tạo.",
@@ -486,8 +486,8 @@
       "videos": "https://www.youtube.com/watch?v=lqu1jS0kZ78&pp=ygUaYuG6o28gdMOgbmcgM2QgxJHDoCBu4bq1bmc%3D",
       "description_2": "Đây là điểm đến hoàn hảo cho gia đình và giới trẻ yêu thích nghệ thuật và nhiếp ảnh, với các chủ đề đa dạng từ thiên nhiên đến giả tưởng.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/baotang3d_2.jpg",
+        "caption": "3D tại bảo tàng"
       }
     }
   },
@@ -508,7 +508,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/khi_1.jpg",
         "caption": "Đàn khỉ trên đường Sơn Trà"
       },
       "description_1": "Nằm trên cung đường quanh co của bán đảo Sơn Trà, con đường này thu hút du khách bởi những đàn khỉ tự nhiên, thân thiện nhưng cũng rất tinh nghịch.",
@@ -516,8 +516,8 @@
       "videos": "https://www.youtube.com/watch?v=2pzT-dWuG7c&pp=ygUqY29uIMSRxrDhu51uZyDEkeG6p3kga2jhu4kg4bufIMSRw6AgbuG6tW5n",
       "description_2": "Đây là điểm dừng chân thú vị để quan sát đời sống động vật hoang dã và tận hưởng không khí trong lành của rừng núi.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/khi_2.jpg",
+        "caption": "hỉ trên đường Sơn Trà"
       }
     }
   },
@@ -538,7 +538,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cayda_1.jpg",
         "caption": "Cây đa Đò Xu cổ thụ"
       },
       "description_1": "Cây đa Đò Xu với tán lá rộng lớn và rễ cây đồ sộ là nơi người dân thường đến cầu nguyện và tưởng nhớ những giá trị lịch sử gắn liền.",
@@ -546,8 +546,8 @@
       "videos": "https://www.youtube.com/watch?v=MQL6M7YmioU&pp=ygUQY8OieSDEkWEgxJHDsiB4ddIHCQl-CQGHKiGM7w%3D%3D",
       "description_2": "Cây đa không chỉ là một kỳ quan thiên nhiên mà còn là nơi lưu giữ những câu chuyện văn hóa của vùng đất Đà Nẵng xưa.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cayda_2.jpg",
+        "caption": "Cây đa Đò Xu"
       }
     }
   },
@@ -569,7 +569,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/causonghan_1.jpg",
         "caption": "Cầu Sông Hàn về đêm"
       },
       "description_1": "Được khánh thành năm 2000, cầu Sông Hàn có thể xoay 90 độ để tàu lớn đi qua, là niềm tự hào của người dân thành phố.",
@@ -577,8 +577,8 @@
       "videos": "https://www.youtube.com/watch?v=NfFSgnNXSOk&pp=ygUQY-G6p3Ugc8O0bmcgaMOgbtIHCQl-CQGHKiGM7w%3D%3D",
       "description_2": "Vào cuối tuần, cầu quay lúc 0h sáng, thu hút đông đảo du khách đến chiêm ngưỡng và chụp ảnh kỷ niệm.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/causonghan_2.jpg",
+        "caption": "Cầu Sông Hàn"
       }
     }
   },
@@ -599,7 +599,7 @@
         "opening_hours": "9:00-17:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/baotangphatgiao_1.jpg",
         "caption": "Hiện vật tại Bảo tàng Phật giáo"
       },
       "description_1": "Bảo tàng trưng bày tượng Phật, kinh sách và các vật phẩm Phật giáo từ nhiều thời kỳ, phản ánh sự phát triển của đạo Phật tại Việt Nam.",
@@ -607,8 +607,8 @@
       "videos": "https://www.youtube.com/watch?v=cAGrbAKxQFw&pp=ygUYYuG6o28gdMOgbmcgcGjhuq10IGdpw6Fv",
       "description_2": "Đây là điểm đến lý tưởng cho những ai muốn tìm hiểu về lịch sử và ý nghĩa sâu xa của Phật giáo trong đời sống người Việt.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/baotangphatgiao_2.jpg",
+        "caption": "Bảo tàng Phật giáo"
       }
     }
   },
@@ -629,7 +629,7 @@
         "opening_hours": "8:30-18:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/fantasy_1.jpg",
         "caption": "Khu trò chơi tại Fantasy Park"
       },
       "description_1": "Fantasy Park mang đến hàng trăm trò chơi đa dạng từ nhẹ nhàng đến mạo hiểm, phù hợp với mọi lứa tuổi trong không gian hiện đại.",
@@ -637,8 +637,8 @@
       "videos": "https://www.youtube.com/watch?v=AkmmPlV0pkI&pp=ygUMZmFudGFzeSBwYXJr",
       "description_2": "Nằm giữa khung cảnh Bà Nà Hills thơ mộng, công viên là điểm nhấn giải trí không thể bỏ qua khi ghé thăm khu du lịch này.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/fantasy_2.jpg",
+        "caption": "Fantasy Park"
       }
     }
   },
@@ -659,16 +659,16 @@
         "opening_hours": "7:00-17:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/langda_1.jpg",
         "caption": "Tác phẩm đá tại làng Non Nước"
       },
       "description_1": "Nằm dưới chân núi Ngũ Hành Sơn, làng đá Non Nước là nơi các nghệ nhân tài hoa biến những khối đá thô thành tác phẩm nghệ thuật sống động.",
       "poem": "Đá thô hóa nét tinh hoa, \nNghệ nhân khéo léo, lòng ta say mê.",
-      "videos": ["https://youtu.be/Bw4pGnAsC2g?si=n29D4-Y_-hKRgei4"],
+      "videos": "https://youtu.be/Bw4pGnAsC2g?si=n29D4-Y_-hKRgei4",
       "description_2": "Du khách có thể tham quan, mua sắm các sản phẩm đá độc đáo và tìm hiểu quy trình chế tác truyền thống hàng trăm năm.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/langda_2.jpg",
+        "caption": "đá tại làng Non Nước"
       }
     }
   },
@@ -689,16 +689,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/chieucamne_1.jpg",
         "caption": "Chiếu Cẩm Nê được phơi khô"
       },
       "description_1": "Làng chiếu Cẩm Nê nổi tiếng với những tấm chiếu được dệt từ cói, mang vẻ đẹp mộc mạc và giá trị văn hóa sâu sắc.",
       "poem": "Chiếu trải bên thềm mát lành, \nTay nghề khéo léo, lòng thành kính yêu.",
-      "videos": ["https://youtu.be/CddR4s9kpOw?si=J3nYEITZx38JRgxA"],
+      "videos": "https://youtu.be/CddR4s9kpOw?si=J3nYEITZx38JRgxA",
       "description_2": "Du khách có thể khám phá quy trình dệt chiếu và mua những sản phẩm thủ công độc đáo làm kỷ niệm.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/chieucamne_2.jpg",
+        "caption": "Chiếu Cẩm Nê"
       }
     }
   },
@@ -719,16 +719,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/namo_1.jpg",
         "caption": "Thùng nước mắm tại Nam Ô"
       },
       "description_1": "Làng Nam Ô mang đến trải nghiệm khám phá nghề làm nước mắm lâu đời, với những thùng gỗ ủ cá thơm lừng.",
       "poem": "Mắm ủ bên thềm thơm ngát, \nBiển khơi gửi vị, lòng khách mê say.",
-      "videos": ["https://youtu.be/posLHl4r8xg?si=j8XLc35FXz5lTV6K"],
+      "videos": "https://youtu.be/posLHl4r8xg?si=j8XLc35FXz5lTV6K",
       "description_2": "Du khách có thể tìm hiểu cách làm nước mắm và mua sản phẩm chính gốc để thưởng thức hoặc làm quà.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/namo_2.jpg",
+        "caption": "Làng nước mắm Nam Ô"
       }
     }
   },
@@ -749,16 +749,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/bichhoa_1.jpg",
         "caption": "Bức tranh tường tại làng bích họa"
       },
       "description_1": "Những bức tường cũ kỹ được khoác áo mới bởi các bức bích họa đầy màu sắc, tái hiện đời sống và văn hóa Đà Nẵng.",
       "poem": "Tranh vẽ tô điểm phố phường, \nSắc màu rực rỡ, lòng vương vấn hoài.",
-      "videos": ["https://youtu.be/ByKeSa8riN0?si=zLx0Ow1wGSVLxvhL"],
+      "videos": "https://youtu.be/ByKeSa8riN0?si=zLx0Ow1wGSVLxvhL",
       "description_2": "Đây là điểm check-in lý tưởng cho những ai yêu thích nhiếp ảnh và muốn khám phá nét đẹp hiện đại của thành phố.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/bichhoa_2.jpg",
+        "caption": "làng bích họa"
       }
     }
   },
@@ -779,16 +779,16 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/namson_1.jpg",
         "caption": "Cổng chùa Nam Sơn"
       },
       "description_1": "Chùa Nam Sơn nổi bật với kiến trúc chạm khắc tinh tế và không gian xanh mát, là nơi lý tưởng để tìm kiếm sự an yên.",
       "poem": "Chùa đứng lặng giữa trời xanh, \nHương trầm thoảng nhẹ, lòng thành thư thái.",
-      "videos": ["https://youtu.be/Di7F9EUgtBM?si=DocOaECcaY7hKl-1"],
+      "videos": "https://youtu.be/Di7F9EUgtBM?si=DocOaECcaY7hKl-1",
       "description_2": "Du khách có thể tham quan, thắp hương và thưởng thức không khí thanh tịnh giữa lòng thành phố nhộn nhịp.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/namson_2.jpg",
+        "caption": "chùa Nam Sơn"
       }
     }
   },
@@ -809,16 +809,16 @@
         "opening_hours": "17:00-23:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/chodem_1.jpg",
         "caption": "Gian hàng tại chợ đêm Helio"
       },
       "description_1": "Chợ đêm Helio mang đến trải nghiệm ẩm thực đường phố đa dạng, từ món ăn địa phương đến quốc tế, trong không gian đèn sáng lung linh.",
       "poem": "Đêm về chợ sáng lung linh, \nẨm thực quyến rũ, lòng thành mê say.",
-      "videos": ["https://youtu.be/KcDYHN4pcI4?si=r9SMLAQd1Y08ug0K"],
+      "videos": "https://youtu.be/KcDYHN4pcI4?si=r9SMLAQd1Y08ug0K",
       "description_2": "Ngoài ăn uống, du khách còn có thể mua sắm quà lưu niệm và thưởng thức các màn biểu diễn nghệ thuật đường phố tại đây.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/chodem_2.jpg",
+        "caption": "chợ đêm Helio"
       }
     }
   },
@@ -839,16 +839,16 @@
         "opening_hours": "18:00-22:00"
       },
       "image_1": {
-        "url": "",
-        "caption": ""
+        "url": "/images/queencobra_1.jpg",
+        "caption": "Queen Cobra"
       },
       "description_1": "Queen Cobra mang đến không gian giải trí mới lạ, kết hợp giữa nghệ thuật và các hoạt động tương tác thú vị.",
       "poem": "Rắn chúa ẩn mình trong đêm, \nBí ẩn quyến rũ, lòng mềm mê say.",
-      "videos": ["https://youtu.be/dXTgqi2Ltw0?si=DTNexi6kRU82W73g"],
+      "videos": "https://youtu.be/dXTgqi2Ltw0?si=DTNexi6kRU82W73g",
       "description_2": "Đây là điểm đến phù hợp cho những ai yêu thích khám phá và trải nghiệm những điều độc đáo trong đêm Đà Nẵng.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/queencobra_2.jpg",
+        "caption": "Queen Cobra"
       }
     }
   },
@@ -869,16 +869,16 @@
         "opening_hours": "7:00-17:00"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/baotangnhs_1.jpg",
         "caption": "Hiện vật tại bảo tàng"
       },
       "description_1": "Bảo tàng lưu giữ những hiện vật quý giá, kể câu chuyện về sự hình thành và phát triển của Ngũ Hành Sơn qua hàng thế kỷ.",
       "poem": "Núi đá lưu dấu thời gian, \nHiện vật kể chuyện, lòng vần kính mong.",
-      "videos": ["https://youtu.be/KwkCCDjCZNI?si=32Q5SYzZd7gX6JzZ"],
+      "videos": "https://youtu.be/KwkCCDjCZNI?si=32Q5SYzZd7gX6JzZ",
       "description_2": "Đây là nơi lý tưởng để tìm hiểu về địa chất, lịch sử và nghệ thuật điêu khắc đá của vùng đất Non Nước.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/baotangnhs_2.jpg",
+        "caption": "Bảo tàng Ngũ Hành Sơn"
       }
     }
   },
@@ -899,7 +899,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/suoida_1.jpg",
         "caption": "Dòng suối trong vắt tại Suối Đá"
       },
       "description_1": "Nằm cách trung tâm thành phố không xa, Suối Đá là nơi lý tưởng để tận hưởng thiên nhiên với dòng suối mát lạnh và những phiến đá lớn.",
@@ -912,8 +912,8 @@
       ],
       "description_2": "Đây là điểm đến hoàn hảo cho dã ngoại, cắm trại và khám phá vẻ đẹp nguyên sơ của bán đảo Sơn Trà.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/suoida_2.jpg",
+        "caption": "Suối Đá"
       }
     }
   },
@@ -954,7 +954,7 @@
         "opening_hours": "7:00-19:00"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/chocon_1.jpg",
         "caption": "Gian hàng tại Chợ Cồn"
       },
       "description_1": "Chợ Cồn là nơi hội tụ các món ăn đặc sản như mì Quảng, bánh tráng cuốn thịt heo và hải sản tươi ngon.",
@@ -967,8 +967,8 @@
       ],
       "description_2": "Ngoài ẩm thực, chợ còn là nơi mua sắm đặc sản và trải nghiệm không gian sống động của người dân Đà Nẵng.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/chocon_2.jpg",
+        "caption": "Chợ Cồn"
       }
     }
   },
@@ -1017,7 +1017,7 @@
         "opening_hours": "7:00-17:30"
       },
       "image_1": {
-        "url": "",
+        "url": "/images/cham_1.jpg",
         "caption": "Tượng Chăm tại bảo tàng"
       },
       "description_1": "Bảo tàng là nơi lưu giữ hơn 2.000 hiện vật Chăm Pa, từ tượng thần Shiva đến phù điêu vũ nữ Apsara, mang đến cái nhìn sâu sắc về nền văn hóa cổ xưa.",
@@ -1030,8 +1030,8 @@
       ],
       "description_2": "Công trình kiến trúc Pháp cổ kết hợp không gian trưng bày hiện đại khiến nơi đây trở thành điểm đến lý tưởng cho những ai yêu thích nghệ thuật và lịch sử.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cham_2.jpg",
+        "caption": "Bảo tàng Nghệ thuật Điêu khắc Chăm Đà Nẵng"
       }
     }
   },
@@ -1116,8 +1116,8 @@
         "opening_hours": "8:00-17:00"
       },
       "image_1": {
-        "url": "..",
-        "caption": "Cầu Vàng tại Bà Nà Hills"
+        "url": "/images/banahill_1.jpg",
+        "caption": "Bà Nà Hills"
       },
       "description_1": "Sun World Bà Nà Hills mang đến không gian nghỉ dưỡng mát mẻ với Cầu Vàng nổi tiếng và kiến trúc Làng Pháp cổ kính giữa núi rừng hùng vĩ.",
       "poem": "Mây vờn quanh núi cao ngàn, \nCầu Vàng lộng lẫy, lòng vần mê say.",
@@ -1129,8 +1129,8 @@
       ],
       "description_2": "Đây là điểm đến lý tưởng để tránh nóng, ngắm cảnh mây trời và trải nghiệm các hoạt động giải trí đẳng cấp giữa thiên nhiên.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/banahill_2.jpg",
+        "caption": "Bà Nà Hills"
       }
     }
   },
@@ -1168,7 +1168,7 @@
         "opening_hours": "Cả ngày"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/deohaivan_1.jpg",
         "caption": "Đèo Hải Vân nhìn từ trên cao"
       },
       "description_1": "Đèo Hải Vân nổi tiếng với cung đường uốn lượn giữa núi rừng và biển cả, mang đến khung cảnh hùng vĩ và thơ mộng hiếm có.",
@@ -1181,8 +1181,8 @@
       ],
       "description_2": "Điểm check-in lý tưởng này cho phép du khách ngắm vịnh Lăng Cô và biển Đà Nẵng từ độ cao 500m, giữa không gian mây trời huyền ảo.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/deohaivan_2.jpg",
+        "caption": "Đèo Hải Vân"
       }
     }
   },
@@ -1227,7 +1227,7 @@
         "opening_hours": "5:00-19:00"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/chualinhung_1.jpg",
         "caption": "Tượng Quan Âm tại Chùa Linh Ứng"
       },
       "description_1": "Chùa Linh Ứng nổi bật với tượng Quan Âm cao 67m, mang ý nghĩa che chở cho ngư dân, kết hợp kiến trúc truyền thống và hiện đại.",
@@ -1240,8 +1240,8 @@
       ],
       "description_2": "Từ chùa, du khách có thể ngắm toàn cảnh vịnh Đà Nẵng và tận hưởng không gian thanh tịnh giữa thiên nhiên Sơn Trà.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/chualinhung_2.jpg",
+        "caption": "Chùa Linh Ứng"
       }
     }
   },
@@ -1426,7 +1426,7 @@
         "opening_hours": "15:00-22:00"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/dndowntown_1.jpg",
         "caption": "Vòng quay Sun Wheel tại Da Nang Downtown"
       },
       "description_1": "Da Nang Downtown mang đến trải nghiệm giải trí đa dạng với vòng quay Sun Wheel nổi tiếng và không gian văn hóa Á Đông độc đáo.",
@@ -1439,8 +1439,8 @@
       ],
       "description_2": "Nơi đây kết hợp mua sắm, ẩm thực và vui chơi, trở thành điểm đến sôi động giữa lòng thành phố Đà Nẵng hiện đại.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/dndowntown_2.jpg",
+        "caption": "Asia Park"
       }
     }
   },
@@ -1487,7 +1487,7 @@
         "opening_hours": "8:00-17:00"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/cauvang_1.jpg",
         "caption": "Cầu Vàng với đôi tay khổng lồ"
       },
       "description_1": "Cầu Vàng nổi bật với thiết kế đôi bàn tay đá nâng đỡ cây cầu dài 150m, mang đến cảm giác như bước giữa mây trời ở độ cao 1.400m.",
@@ -1500,8 +1500,8 @@
       ],
       "description_2": "Đây là điểm check-in nổi tiếng thế giới, mang đến tầm nhìn ngoạn mục và trải nghiệm độc đáo giữa thiên nhiên hùng vĩ.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/cauvang_2.jpg",
+        "caption": "Cầu Vàng"
       }
     }
   },
@@ -1559,15 +1559,13 @@
       "name:vi": "Cầu Rồng",
       "tourism": "attraction",
       "short_description": "Cầu Rồng Đà Nẵng - Biểu tượng kiến trúc độc đáo bắc qua sông Hàn, nổi tiếng với màn trình diễn phun lửa và phun nước ấn tượng vào cuối tuần. Cây cầu được thiết kế như một con rồng vàng uốn lượn, trở thành điểm check-in không thể bỏ qua khi đến Đà Nẵng.",
-      "youtube_url": "https://www.youtube.com/watch?v=I5dooJoebFY",
-      "img_url": "...",
       "title": "Cầu Rồng - Biểu tượng rồng vàng sông Hàn",
       "basic_info": {
         "address": "Hải Châu, Đà Nẵng, Việt Nam",
         "opening_hours": "Cả ngày (phun lửa/phun nước: T7, CN 21:00-22:00)"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/caurong_1.jpg",
         "caption": "Cầu Rồng phun lửa về đêm"
       },
       "description_1": "Cầu Rồng với hình dáng rồng vàng uốn lượn dài 666m là biểu tượng kiến trúc độc đáo, nổi bật với màn phun lửa và phun nước cuối tuần.",
@@ -1580,8 +1578,8 @@
       ],
       "description_2": "Cầu không chỉ là công trình giao thông mà còn là điểm ngắm cảnh và check-in nổi tiếng, đặc biệt khi đèn LED thắp sáng về đêm.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/caurong_2.jpg",
+        "caption": "Cầu Rồng"
       }
     }
   },
@@ -1657,7 +1655,7 @@
         "opening_hours": "17:00-23:00"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/chodemsontra_1.jpg",
         "caption": "Hải sản nướng tại Chợ Đêm Sơn Trà"
       },
       "description_1": "Chợ Đêm Sơn Trà mang đậm chất làng chài với hải sản tươi sống được nướng thơm lừng, hòa cùng không gian gió biển mát lành.",
@@ -1670,8 +1668,8 @@
       ],
       "description_2": "Đây là điểm đến lý tưởng để thưởng thức ẩm thực miền Trung và mua sắm đặc sản biển trong không gian thoáng đãng bên bãi biển Phạm Văn Đồng.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/chodemsontra_2.jpg",
+        "caption": "Chợ Đêm Sơn Trà"
       }
     }
   },
@@ -1710,7 +1708,7 @@
         "opening_hours": "8:00-17:00 (đóng cửa thứ Hai)"
       },
       "image_1": {
-        "url": "...",
+        "url": "/images/baotangdn_1.jpg",
         "caption": "Hiện vật tại Bảo tàng Đà Nẵng"
       },
       "description_1": "Bảo tàng Đà Nẵng lưu giữ hơn 2.500 hiện vật, từ đồ gốm Sa Huỳnh đến kỷ vật kháng chiến, kể câu chuyện lịch sử và văn hóa xứ Quảng.",
@@ -1723,8 +1721,8 @@
       ],
       "description_2": "Với công nghệ AR và kiến trúc Pháp cổ, đây là nơi lý tưởng để khám phá quá khứ và sống ảo giữa lòng thành phố.",
       "image_2": {
-        "url": "",
-        "caption": ""
+        "url": "/images/baotangdn_2.jpg",
+        "caption": "Bảo tàng Đà Nẵng"
       }
     }
   } 
