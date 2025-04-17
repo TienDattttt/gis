@@ -12,6 +12,8 @@ import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L, { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
@@ -126,7 +128,7 @@ const TourDetails = () => {
   const [alternatives, setAlternatives] = useState([]);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
-  const [lastLocation, setLastLocation] = useState(null); // Lưu địa điểm cuối cùng được chọn
+  const [lastLocation, setLastLocation] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const itineraryData = location.state?.itinerary;
@@ -213,20 +215,16 @@ const TourDetails = () => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  // Xử lý khi click vào một địa điểm trong lịch trình
   const handleLocationClick = (item) => {
     if (!item.lat || !item.lng) return;
 
-    // Điểm bắt đầu: Nếu chưa có địa điểm cuối cùng, bắt đầu từ Khách sạn Mường Thanh
     const startLocation = lastLocation || currentLocation;
 
-    // Tạo tuyến đường từ địa điểm cuối cùng (hoặc vị trí hiện tại) đến địa điểm được chọn
     const route = [
       { lat: startLocation.lat, lng: startLocation.lng, name: startLocation.name },
       { lat: item.lat, lng: item.lng, name: item.title },
     ];
 
-    // Cập nhật tuyến đường và địa điểm cuối cùng
     setSelectedRoute(route);
     setLastLocation({ lat: item.lat, lng: item.lng, name: item.title });
   };
@@ -349,26 +347,8 @@ const TourDetails = () => {
 
               <Tabs defaultValue="itinerary" className="w-full">
                 <TabsList className="w-full justify-start mb-6 bg-gray-100 p-1 rounded-lg">
-                  <TabsTrigger value="overview">Tổng quan</TabsTrigger>
                   <TabsTrigger value="itinerary">Lịch trình</TabsTrigger>
-                  <TabsTrigger value="reviews">Đánh giá</TabsTrigger>
                 </TabsList>
-
-                <TabsContent value="overview" className="animate-fade-in">
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold mb-4">Tour Highlights</h3>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {highlights.map((highlight, index) => (
-                          <li key={index} className="flex items-start">
-                            <Check className="h-5 w-5 text-tourigo-primary mr-2 shrink-0 mt-0.5" />
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </TabsContent>
 
                 <TabsContent value="itinerary" className="animate-fade-in">
                   <div>
@@ -449,79 +429,7 @@ const TourDetails = () => {
                     )}
                   </div>
                 </TabsContent>
-
-                <TabsContent value="reviews" className="animate-fade-in">
-                  <div>
-                    <h2 className="text-2xl font-semibold mb-6">Đánh giá</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h3 className="text-lg font-medium mb-4">Điểm đánh giá tổng quan</h3>
-                        <div className="flex items-center mb-3">
-                          <div className="text-4xl font-bold mr-3">4.8</div>
-                          <div>
-                            <div className="flex items-center text-tourigo-secondary mb-1">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`h-5 w-5 ${i < 4 ? 'fill-current' : ''}`} />
-                              ))}
-                            </div>
-                            <div className="text-sm text-gray-500">Dựa trên 48 đánh giá</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <Separator className="my-8" />
-                    <div className="space-y-6">
-                      {reviews.map((review, index) => (
-                        <div key={index} className="border-b border-gray-100 pb-6 last:border-0">
-                          <div className="flex items-start">
-                            <img 
-                              src={review.avatar} 
-                              alt={review.name}
-                              className="w-12 h-12 rounded-full object-cover mr-4"
-                            />
-                            <div className="flex-1">
-                              <h4 className="font-medium">{review.name}</h4>
-                              <div className="flex items-center text-sm text-gray-500 mb-2">
-                                <div className="flex items-center text-tourigo-secondary mr-3">
-                                  {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className={`h-4 w-4 ${i < review.rating ? 'fill-current' : ''}`} />
-                                  ))}
-                                </div>
-                                <span>{review.date}</span>
-                              </div>
-                              <p className="text-gray-600">{review.text}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </TabsContent>
               </Tabs>
-
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold mb-6">Câu hỏi thường gặp</h2>
-                <div className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                      <button
-                        className="w-full flex items-center justify-between px-6 py-4 text-left focus:outline-none"
-                        onClick={() => toggleFaq(index)}
-                      >
-                        <h3 className="font-medium">{faq.question}</h3>
-                        {activeFaq === index ? (
-                          <ChevronUp className="h-5 w-5 text-tourigo-primary" />
-                        ) : (
-                          <ChevronDown className="h-5 w-5 text-tourigo-primary" />
-                        )}
-                      </button>
-                      <div className={`px-6 pb-4 transition-all duration-300 ease-in-out ${activeFaq === index ? 'block animate-fade-down' : 'hidden'}`}>
-                        <p className="text-gray-600">{faq.answer}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Sidebar */}
@@ -553,7 +461,6 @@ const TourDetails = () => {
                       >
                         <TileLayer
                           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                          attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         />
                         {tourLocations
                           .filter(loc => !selectedDay || loc.day === selectedDay)
@@ -589,101 +496,57 @@ const TourDetails = () => {
         </div>
       </section>
 
+      {/* Slider for Itinerary Locations */}
       <section className="py-12 bg-tourigo-gray-100">
         <div className="tourigo-container">
-          <h2 className="text-2xl font-semibold mb-6">Các lịch trình khác</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {relatedTours.map((tour, index) => (
-              <div 
-                key={index} 
-                className="tour-card animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative">
-                  <img 
-                    src={tour.image} 
-                    alt={tour.title}
-                    className="w-full h-[220px] object-cover"
-                  />
-                  <div className="absolute bottom-4 left-4 bg-white/90 text-tourigo-dark text-sm font-medium py-1 px-3 rounded-full">
-                    {tour.duration} Days
+          <h2 className="text-2xl font-semibold mb-6">Các địa điểm trong lịch trình</h2>
+          {itineraryData && itineraryData.locations.length > 0 ? (
+            <Slider {...sliderSettings}>
+              {itineraryData.locations.map((loc, index) => {
+                const details = typeof loc.location.details === 'string' 
+                  ? JSON.parse(loc.location.details) 
+                  : loc.location.details;
+                return (
+                  <div key={index} className="px-2">
+                    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
+                        src={loc.location.images?.length > 0 ? `${BASE_URL}/media${loc.location.images[0].url}` : '/images/default-placeholder.jpg'} 
+                        alt={loc.location.name}
+                        className="w-full h-[220px] object-cover"
+                      />
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-2">
+                          <Link 
+                            to={`/blog-details/${loc.location.id}`} 
+                            className="hover:text-tourigo-primary transition-colors duration-300"
+                          >
+                            {loc.location.name}
+                          </Link>
+                        </h3>
+                        <p className="text-gray-600 mb-4">
+                          {details.short_description || 'Không có mô tả.'}
+                        </p>
+                        <Link 
+                          to={`/blog-details/${loc.location.id}`} 
+                          className="text-tourigo-primary font-medium inline-flex items-center hover:text-tourigo-dark transition-colors duration-300"
+                        >
+                          Xem chi tiết
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <MapPin className="h-4 w-4 mr-1 text-tourigo-primary" />
-                    {tour.location}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    <Link to="/tour-details" className="hover:text-tourigo-primary transition-colors duration-300">
-                      {tour.title}
-                    </Link>
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
+                );
+              })}
+            </Slider>
+          ) : (
+            <p className="text-gray-600">Không có địa điểm nào trong lịch trình.</p>
+          )}
         </div>
       </section>
     </div>
   );
 };
 
-// Sample Data
-const highlights = [
-  "Khám phá vẻ đẹp thiên nhiên Đà Nẵng",
-  "Tham quan các bảo tàng lịch sử độc đáo",
-  "Trải nghiệm các điểm tham quan nổi tiếng",
-  "Thư giãn tại các công viên giải trí hàng đầu",
-];
 
-const reviews = [
-  {
-    name: "Nguyễn Văn A",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    rating: 5,
-    date: "April 07, 2025",
-    text: "Lịch trình rất hợp lý, các địa điểm được chọn đều gần nhau và thú vị. Rất đáng để thử!"
-  },
-  {
-    name: "Trần Thị B",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    rating: 4,
-    date: "April 06, 2025",
-    text: "Tôi thích cách hệ thống gợi ý, nhưng muốn có thêm thời gian tự do hơn một chút."
-  },
-];
-
-const faqs = [
-  {
-    question: "Làm thế nào để thay đổi địa điểm?",
-    answer: "Bạn có thể nhấn nút 'Thay đổi' bên cạnh địa điểm trong lịch trình, sau đó chọn địa điểm khác từ slider hiển thị."
-  },
-  {
-    question: "Tôi cần đăng nhập để làm gì?",
-    answer: "Bạn cần đăng nhập để lưu lịch trình hoặc thay đổi địa điểm, đảm bảo lịch trình của bạn được lưu trữ an toàn."
-  },
-];
-
-const relatedTours = [
-  {
-    title: "Khám phá Huế 2 ngày",
-    location: "Huế, Việt Nam",
-    duration: 2,
-    image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "Hành trình Hội An 1 ngày",
-    location: "Hội An, Việt Nam",
-    duration: 1,
-    image: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "Nghỉ dưỡng Đà Nẵng 3 ngày",
-    location: "Đà Nẵng, Việt Nam",
-    duration: 3,
-    image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-];
 
 export default TourDetails;

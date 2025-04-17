@@ -29,14 +29,15 @@ const Header = () => {
   };
 
   const menuItems = [
-    { name: 'Home', path: '/' },
+    { name: 'Trang chủ', path: '/' },
+    
     { 
-      name: 'Tours', 
-      path: '/tour-details',
+      name: 'Bản đồ tương tác', 
+      path: '/map',
       hasDropdown: true
     },
     { 
-      name: 'Blog', 
+      name: 'Bài viết', 
       path: '/blog-grid',
       hasDropdown: true
     },
@@ -85,7 +86,7 @@ const Header = () => {
             <Link to="/sign-in">
               <Button variant="outline" className="border-2 hover:bg-white/10 bg-transparent border-white text-white">
                 <User className="h-5 w-5 mr-2" />
-                Sign In
+                Đăng nhập
               </Button>
             </Link>
           </div>
@@ -131,7 +132,7 @@ const Header = () => {
                 className="block py-2 text-center bg-tourigo-primary text-white rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Sign In
+                Đăng nhập
               </Link>
             </div>
           </div>

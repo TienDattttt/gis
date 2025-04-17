@@ -1,0 +1,237 @@
+/* Panel chính của LocationDetail */
+.location-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 100%;
+  background-color: white;
+  z-index: 950;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Chuyển overflow-y sang đây để toàn bộ panel có thể cuộn */
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+/* Hiệu ứng khi đóng */
+.location-detail.closing {
+  transform: translateX(-100%);
+}
+
+/* Container cho ảnh (khi hiển thị chi tiết địa điểm) */
+.location-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nút đóng */
+.close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Container cho nội dung */
+.location-content {
+  padding: 16px;
+  /* Bỏ flex: 1 để không chiếm toàn bộ không gian */
+}
+
+/* Tiêu đề địa điểm */
+.location-header {
+  padding: 0 0 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.location-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #202124;
+}
+
+.location-address {
+  font-size: 13px;
+  color: #5f6368;
+}
+
+/* Các nút hành động (khi hiển thị chi tiết địa điểm) */
+.location-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+}
+
+/* Styles cho danh sách địa điểm */
+.locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
+  /* Bỏ max-height để danh sách chỉ chiếm không gian cần thiết */
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.location-item:last-child {
+  border-bottom: none;
+}
+
+.location-item-main {
+  flex: 1;
+}
+
+.location-item-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 4px;
+}
+
+.location-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.location-item-rating {
+  display: flex;
+  align-items: center;
+}
+
+.location-item-distance {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.location-item-address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.detail-icon {
+  color: #5f6368;
+  flex-shrink: 0;
+}
+
+.location-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #1a73e8;
+  background: #e8f0fe;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-button:hover {
+  background: #d2e3fc;
+}
+
+.action-icon {
+  color: #1a73e8;
+}
+
+/* Chi tiết địa điểm (khi hiển thị chi tiết một địa điểm) */
+.location-details {
+  padding: 16px 0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-primary {
+  color: #202124;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.detail-secondary {
+  color: #5f6368;
+  font-size: 12px;
+}
+
+/* Phần mô tả địa điểm */
+.location-description {
+  padding: 16px 0;
+}
+
+.location-description h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.location-description p {
+  font-size: 14px;
+  color: #5f6368;
+  line-height: 1.5;
+}
+
+/* Phần ảnh bổ sung */
+.photos-section {
+  padding: 16px 0;
+}
+
+.photos-header {
+  font-size: 16px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.photos-grid {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.photo-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}

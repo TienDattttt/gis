@@ -11,25 +11,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="text-2xl font-bold mb-6 inline-block">
-              <span className="text-tourigo-primary">Tour</span>igo
+              <span className="text-tourigo-primary">Tibi</span>ki
             </Link>
             <p className="text-gray-400 mb-6">
-              Experience the world's beauty with our expertly crafted tours and vacation packages.
+            Tuyệt tác biển xanh vẫy gọi, khám phá ẩm thực đỉnh cao, chinh phục những cây cầu kỳ vĩ - Đà Nẵng, điểm đến không thể bỏ lỡ!
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-white/10 hover:bg-tourigo-primary p-2 rounded-full transition-colors duration-300">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-tourigo-primary p-2 rounded-full transition-colors duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-tourigo-primary p-2 rounded-full transition-colors duration-300">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-tourigo-primary p-2 rounded-full transition-colors duration-300">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
+            
           </div>
 
           {/* Quick Links */}
@@ -40,17 +27,12 @@ const Footer = () => {
                 <Link to="/" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Home</Link>
               </li>
               <li>
-                <Link to="/tour-details" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Tours</Link>
+                <Link to="/map" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Bản đồ tương tác</Link>
               </li>
               <li>
-                <Link to="/blog-grid" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Blog</Link>
+                <Link to="/blog-grid" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Bài viết</Link>
               </li>
-              <li>
-                <Link to="#" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">About Us</Link>
-              </li>
-              <li>
-                <Link to="#" className="text-gray-400 hover:text-tourigo-primary transition-colors duration-300">Contact</Link>
-              </li>
+             
             </ul>
           </div>
 
@@ -60,7 +42,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-tourigo-primary shrink-0 mt-1" />
-                <span className="text-gray-400">123 Travel Street, Adventure City, World</span>
+                <span className="text-gray-400">263B Lê Văn Sỹ</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-tourigo-primary shrink-0" />
@@ -68,38 +50,19 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-tourigo-primary shrink-0" />
-                <span className="text-gray-400">info@tourigo.com</span>
+                <span className="text-gray-400">1150080090@sv.hcmunre.edu.vn</span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for travel tips and exclusive deals.
-            </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-tourigo-primary text-white"
-              />
-              <button
-                type="submit"
-                className="w-full bg-tourigo-primary hover:bg-tourigo-secondary text-white py-3 rounded-lg transition-colors duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+        
         </div>
 
         {/* Divider */}
         <div className="border-t border-white/10 mt-12 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Tourigo. All rights reserved.
+              © {new Date().getFullYear()} Tibiki. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link to="#" className="text-gray-400 hover:text-tourigo-primary text-sm">

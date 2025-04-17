@@ -16,6 +16,7 @@ import BlogDetails from "./pages/BlogDetails";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
+import Map from "./pages/Map";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/map" element={<Map />} />
           <Route path="/tour-details" element={<TourDetails />} />
           <Route path="/blog-grid" element={<BlogGrid />} />
           <Route path="/blog-details/:id" element={<BlogDetails />} /> {/* Thêm :id */}

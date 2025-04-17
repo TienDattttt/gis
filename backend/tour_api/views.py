@@ -1,13 +1,14 @@
 from rest_framework import generics
 from rest_framework.response import Response
 from django.db.models import Q
-from .models import Location, Itinerary, ItineraryLocation
-from .serializers import LocationSerializer, ItinerarySerializer
+from .models import Location, Itinerary, ItineraryLocation, District
+from .serializers import LocationSerializer, ItinerarySerializer,DistrictSerializer
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
 from rest_framework import status
+from django.contrib.gis.measure import D
 
 class ItinerarySuggestionView(APIView):
     def post(self, request):
@@ -149,31 +150,94 @@ class AlternativeLocationsView(APIView):
 
 class LocationListView(generics.ListAPIView):
     serializer_class = LocationSerializer
+    
 
     def get_queryset(self):
-        queryset = Location.objects.all()
+        queryset = Location.objects.all().order_by('id')
         search_query = self.request.query_params.get('search', None)
-        tag = self.request.query_params.get('tag', None)
+        tourism_type = self.request.query_params.get('tourism_type', None)
+        nearby = self.request.query_params.get('nearby', None)
+        lat = self.request.query_params.get('lat', None)
+        lng = self.request.query_params.get('lng', None)
+        district = self.request.query_params.get('district', None)
+        limit = self.request.query_params.get('limit', 20)
 
+        try:
+            limit = int(limit)
+        except (ValueError, TypeError):
+            limit = 20
+
+        # Lọc theo quận/huyện
+        if district:
+            try:
+                district_obj = District.objects.get(name=district)
+                queryset = queryset.filter(geom__within=district_obj.geom)
+                print(f"Queryset for district {district}: {queryset.count()} locations found")  # Debug
+            except District.DoesNotExist:
+                print(f"District {district} not found")
+                queryset = queryset.none()  # Trả về tập hợp rỗng nếu quận không tồn tại
+
+        # Tìm kiếm theo từ khóa
         if search_query:
             queryset = queryset.filter(
                 Q(name__icontains=search_query) |
-                Q(details__title__icontains=search_query) |
-                Q(details__short_description__icontains=search_query)
+                Q(name_vi__icontains=search_query) |
+                Q(details__contains=search_query)
             )
 
-        if tag:
-            queryset = queryset.filter(tourism_type__iexact=tag)
+        # Lọc theo tourism_type
+        if tourism_type:
+            queryset = queryset.filter(tourism_type=tourism_type)
 
-        return queryset
+        # Tìm địa điểm gần vị trí hiện tại
+        if nearby and lat and lng:
+            try:
+                point = Point(float(lng), float(lat), srid=4326)
+                queryset = queryset.filter(geom__isnull=False).annotate(
+                    distance=Distance('geom', point)
+                ).order_by('distance')
+            except (ValueError, TypeError):
+                pass
 
-    def list(self, request, *args, **kwargs):
-        if request.query_params.get('all') == 'true':
-            queryset = self.get_queryset()
-            serializer = self.get_serializer(queryset, many=True)
-            return Response(serializer.data)
-        return super().list(request, *args, **kwargs)
-
+        return queryset[:limit]
+    
 class LocationDetailView(generics.RetrieveAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
+
+
+class AllLocationsView(generics.ListAPIView):
+    serializer_class = LocationSerializer
+    pagination_class = None  # Tắt phân trang
+
+    def get_queryset(self):
+        queryset = Location.objects.all().order_by('id')
+        tourism_type = self.request.query_params.get('tourism_type', None)
+        nearby = self.request.query_params.get('nearby', None)
+        lat = self.request.query_params.get('lat', None)
+        lng = self.request.query_params.get('lng', None)
+
+        if tourism_type:
+            queryset = queryset.filter(tourism_type=tourism_type)
+
+        if nearby and lat and lng:
+            try:
+                point = Point(float(lng), float(lat), srid=4326)
+                queryset = queryset.filter(geom__isnull=False).annotate(
+                    distance=Distance('geom', point)
+                ).order_by('distance')
+            except (ValueError, TypeError):
+                pass
+        
+        return queryset
+    
+class DistrictListView(generics.ListAPIView):
+    queryset = District.objects.all().order_by('name')
+    serializer_class = DistrictSerializer
+    pagination_class = None
+
+#để lấy ranh giới của một quận cụ thể
+class DistrictDetailView(generics.RetrieveAPIView):
+    queryset = District.objects.all()
+    serializer_class = DistrictSerializer
+    lookup_field = 'name'  # Sử dụng name thay vì id để tra cứu

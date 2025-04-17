@@ -1,6 +1,6 @@
 # itinerary/serializers.py
 from rest_framework import serializers
-from .models import Location, Image, Itinerary, ItineraryLocation
+from .models import Location, Image, Itinerary, ItineraryLocation, District
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,7 +13,7 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Location
-        fields = ['id', 'name', 'name_vi', 'tourism_type', 'geom', 'details', 'images']
+        fields = ['id', 'name', 'name_vi', 'tourism_type', 'geom', 'details', 'images', 'embed_url']
 
     def get_geom(self, obj):
         if obj.geom:
@@ -33,3 +33,15 @@ class ItinerarySerializer(serializers.ModelSerializer):
     class Meta:
         model = Itinerary
         fields = ['id', 'user', 'survey_data', 'created_at', 'updated_at', 'locations']
+
+class DistrictSerializer(serializers.ModelSerializer):
+    geom = serializers.SerializerMethodField()
+
+    class Meta:
+        model = District
+        fields = ['id', 'name', 'geom']
+
+    def get_geom(self, obj):
+        if obj.geom:
+            return obj.geom.geojson
+        return None

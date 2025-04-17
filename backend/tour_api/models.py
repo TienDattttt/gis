@@ -3,6 +3,18 @@ from django.contrib.gis.db import models as gis_models
 from django.db.models import JSONField  # Thay đổi import
 from django.contrib.auth.models import User
 
+class District(gis_models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, unique=True)
+    geom = gis_models.MultiPolygonField(srid=4326)
+
+    class Meta:
+        managed = True
+        db_table = 'districts'
+
+    def __str__(self):
+        return self.name
+
 class Location(gis_models.Model):
     id = models.BigIntegerField(primary_key=True)
     type = models.CharField(max_length=50, blank=True, null=True)
@@ -11,10 +23,12 @@ class Location(gis_models.Model):
     tourism_type = models.CharField(max_length=50)
     geom = gis_models.PointField(srid=4326, blank=True, null=True)
     details = JSONField(blank=True, null=True)  # Sử dụng JSONField từ django.db.models
+    embed_url = models.URLField(max_length=500, blank=True, null=True)  # Trường mới để lưu URL nhúng
 
     class Meta:
         managed = True
         db_table = 'locations'
+        ordering = ['id']
 
     def __str__(self):
         return self.name

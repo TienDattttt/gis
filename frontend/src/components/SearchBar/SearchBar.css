@@ -1,0 +1,216 @@
+.search-bar-container {
+  width: 100%;
+  max-width: 433px; /* Chiều rộng cố định giống ảnh */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000; /* Đảm bảo hiển thị trên bản đồ */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px; /* Chiều cao giống ảnh */
+  padding: 0 8px; /* Giảm padding để gọn hơn */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Bóng đổ nhẹ hơn */
+  background-color: white;
+  border-radius: 8px 8px 0 0; /* Bo góc trên để nối liền với gợi ý */
+}
+
+.menu-button {
+  padding: 8px;
+  margin-right: 4px; /* Giảm khoảng cách */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  color: #5f6368;
+}
+
+.search-input-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Ẩn nút tìm kiếm vì không có trong ảnh */
+.search-button {
+  display: none; /* Ẩn nút tìm kiếm */
+}
+
+.search-input {
+  flex: 1;
+  height: 48px; /* Đồng bộ với chiều cao của search-bar */
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 12px; /* Điều chỉnh padding */
+  font-size: 16px;
+  box-shadow: none;
+}
+
+.search-input:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.clear-search {
+  padding: 8px;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+/* Ẩn nút điều hướng vì không có trong ảnh */
+.directions-button {
+  display: none; /* Ẩn nút điều hướng */
+}
+
+.directions-icon {
+  color: #1a73e8;
+}
+
+/* Directions mode styling - Giữ nguyên nhưng không sử dụng trong trường hợp này */
+.directions-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 8px;
+}
+
+.directions-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.directions-input {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.direction-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.origin {
+  background-color: #1a73e8;
+}
+
+.destination {
+  background-color: #d04231;
+}
+
+.direction-field {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  height: 24px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.direction-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.close-directions {
+  padding: 8px;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling cho gợi ý tìm kiếm */
+.search-suggestions {
+  position: absolute;
+  top: 48px; /* Đặt ngay dưới thanh tìm kiếm, đồng bộ với chiều cao search-bar */
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 0 0 8px 8px; /* Bo góc dưới để nối liền với thanh tìm kiếm */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Bóng đổ nhẹ hơn */
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 999;
+  margin-top: 0; /* Không có khoảng cách với thanh tìm kiếm */
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px; /* Giảm padding để giống ảnh */
+  cursor: pointer;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5; /* Màu nền nhẹ khi hover */
+}
+
+.suggestion-icon {
+  color: #5f6368;
+  margin-right: 12px; /* Giảm khoảng cách */
+  flex-shrink: 0;
+}
+
+.suggestion-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.suggestion-primary {
+  font-size: 16px;
+  color: #202124;
+  font-weight: 500; /* Tên địa điểm đậm hơn */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-secondary {
+  font-size: 14px;
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animation cho loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
