@@ -76,3 +76,19 @@ class ItineraryLocation(models.Model):
 
     def __str__(self):
         return f"{self.location.name} in Itinerary {self.itinerary.id} (Day {self.day}, Order: {self.visit_order})"
+    
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ratings')
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='ratings')
+    score = models.IntegerField(choices=[(i, i) for i in range(1, 6)], help_text="Điểm từ 1 đến 5")
+    comment = models.TextField(blank=True, null=True, help_text="Bình luận về địa điểm")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        managed = True
+        db_table = 'ratings'
+        unique_together = ('user', 'location')  # Mỗi người dùng chỉ đánh giá một địa điểm một lần
+
+    def __str__(self):
+        return f"{self.user.username} rated {self.location.name} - {self.score} stars"

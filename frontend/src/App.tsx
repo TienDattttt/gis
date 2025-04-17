@@ -17,6 +17,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 import Map from "./pages/Map";
+import Profile from './components/Profile';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner position="top-right" richColors />
       <BrowserRouter>
         <ScrollToTop />
         <Header />
@@ -32,8 +33,9 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<Map />} />
           <Route path="/tour-details" element={<TourDetails />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/blog-grid" element={<BlogGrid />} />
-          <Route path="/blog-details/:id" element={<BlogDetails />} /> {/* Thêm :id */}
+          <Route path="/blog-details/:id" element={<BlogDetails />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />

@@ -16,8 +16,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+import { toast } from 'sonner';
 
-// Cấu hình icon tùy chỉnh cho các địa điểm trong tour
+// Cấu hình icon tùy chỉnh
 const customIcon = L.icon({
   iconUrl: '/images/flag.png',
   iconSize: [38, 38],
@@ -27,7 +28,6 @@ const customIcon = L.icon({
   shadowSize: [41, 41],
 });
 
-// Cấu hình icon cho tọa độ hiện tại (Khách sạn Mường Thanh)
 const currentLocationIcon = L.icon({
   iconUrl: '/images/location.png',
   iconSize: [38, 38],
@@ -37,14 +37,13 @@ const currentLocationIcon = L.icon({
   shadowSize: [41, 41],
 });
 
-// Cấu hình icon xe hơi để di chuyển trên bản đồ
 const carIcon = L.icon({
   iconUrl: '/images/car.gif',
   iconSize: [38, 38],
   iconAnchor: [19, 19],
 });
 
-// Component để vẽ tuyến đường và di chuyển icon xe hơi
+// Component RoutingMachine
 const RoutingMachine = ({ waypoints, animateCar }) => {
   const map = useMap();
   const [carMarker, setCarMarker] = useState(null);
@@ -52,7 +51,6 @@ const RoutingMachine = ({ waypoints, animateCar }) => {
   useEffect(() => {
     if (!map || waypoints.length < 2) return;
 
-    // Xóa tuyến đường và marker xe hơi cũ (nếu có)
     if (carMarker) {
       map.removeLayer(carMarker);
     }
@@ -62,7 +60,6 @@ const RoutingMachine = ({ waypoints, animateCar }) => {
       }
     });
 
-    // Tạo plan với tùy chỉnh marker
     const plan = L.Routing.plan(
       waypoints.map(point => L.latLng(point.lat, point.lng)),
       {
@@ -89,7 +86,6 @@ const RoutingMachine = ({ waypoints, animateCar }) => {
       }),
     }).addTo(map);
 
-    // Khi tuyến đường được vẽ xong, lấy tọa độ và di chuyển xe hơi
     routingControl.on('routesfound', (e) => {
       const route = e.routes[0];
       const coordinates = route.coordinates;
@@ -134,7 +130,6 @@ const TourDetails = () => {
   const itineraryData = location.state?.itinerary;
   const BASE_URL = 'http://localhost:8000';
 
-  // Vị trí hiện tại (Khách sạn Mường Thanh)
   const currentLocation = {
     lat: 16.054054614098437,
     lng: 108.24713719515304,
@@ -145,8 +140,8 @@ const TourDetails = () => {
     ? itineraryData.locations.reduce((acc, loc) => {
         if (!acc[loc.day]) acc[loc.day] = [];
         acc[loc.day].push({
-          id: loc.id,
-          locationId: loc.location.id,
+          id: loc.id, // ID của ItineraryLocation
+          locationId: loc.location.id, // ID của Location
           title: loc.location.name,
           description: `Visit ${loc.location.name} (${loc.location.tourism_type})`,
           time: loc.estimated_time,
@@ -164,11 +159,15 @@ const TourDetails = () => {
 
   const fetchAlternatives = async (tourismType) => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/locations/alternatives/${tourismType}/`);
+      const token = localStorage.getItem('access_token');
+      const config = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
+      const response = await axios.get(`${BASE_URL}/api/locations/alternatives/${tourismType}/`, config);
+      console.log('Alternatives response:', response.data);
       setAlternatives(response.data);
     } catch (error) {
       console.error('Lỗi khi lấy địa điểm thay thế:', error);
-      alert('Không thể tải danh sách địa điểm thay thế.');
+      const errorMessage = error.response?.data?.error || 'Không thể tải danh sách địa điểm thay thế.';
+      toast.error(errorMessage);
     }
   };
 
@@ -179,37 +178,64 @@ const TourDetails = () => {
 
   const handleUpdateLocation = async (newLocationId) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('access_token');
+      if (!token) {
+        toast.error('Vui lòng đăng nhập để thay đổi địa điểm.');
+        navigate('/sign-in');
+        return;
+      }
       const response = await axios.put(
         `${BASE_URL}/api/itinerary/${itineraryData.id}/update/`,
-        { location_id: selectedLocation.locationId, new_location_id: newLocationId },
+        {
+          location_id: selectedLocation.locationId, // ID của Location
+          new_location_id: newLocationId,
+        },
         { headers: { Authorization: `Bearer ${token}` } }
       );
+      console.log('Update location response:', response.data);
+      toast.success('Địa điểm đã được cập nhật thành công!');
       navigate('/tour-details', { state: { itinerary: response.data, currentLocation } });
       setSelectedLocation(null);
+      setAlternatives([]);
     } catch (error) {
       console.error('Lỗi khi cập nhật địa điểm:', error);
-      alert('Vui lòng đăng nhập để thay đổi địa điểm.');
-      navigate('/login');
+      const errorMessage = error.response?.data?.error || 'Không thể cập nhật địa điểm. Vui lòng thử lại.';
+      toast.error(errorMessage);
+      if (error.response?.status === 401) {
+        navigate('/sign-in');
+      }
     }
   };
 
   const handleSaveItinerary = async () => {
     try {
-      const token = localStorage.getItem('token');
-      if (!token) throw new Error('No token');
-      await axios.put(
-        `${BASE_URL}/api/itinerary/${itineraryData.id}/update/`,
-        {},
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      alert('Lịch trình đã được lưu thành công!');
+        const token = localStorage.getItem('access_token');
+        if (!token) {
+            toast.error('Vui lòng đăng nhập để lưu lịch trình.');
+            navigate('/sign-in');
+            return;
+        }
+        const response = await axios.post(
+            `${BASE_URL}/api/itinerary/${itineraryData.id}/save/`,
+            {},
+            { headers: { Authorization: `Bearer ${token}` } }
+        );
+        console.log('Save itinerary response:', response.data);
+        if (response.status === 201) {
+            toast.success('Lịch trình đã được sao chép và lưu thành công!');
+        } else {
+            toast.success('Lịch trình đã được lưu thành công!');
+        }
+        navigate('/tour-details', { state: { itinerary: response.data, currentLocation } });
     } catch (error) {
-      console.error('Lỗi khi lưu lịch trình:', error);
-      alert('Vui lòng đăng nhập để lưu lịch trình.');
-      navigate('/login');
+        console.error('Lỗi khi lưu lịch trình:', error);
+        const errorMessage = error.response?.data?.error || 'Không thể lưu lịch trình. Vui lòng thử lại.';
+        toast.error(errorMessage);
+        if (error.response?.status === 401) {
+            navigate('/sign-in');
+        }
     }
-  };
+};
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -269,7 +295,6 @@ const TourDetails = () => {
 
   return (
     <div className="pt-20">
-      {/* Tour Header */}
       <section
         className="relative h-[50vh] min-h-[400px] flex items-end bg-cover bg-center"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)' }}
@@ -313,11 +338,9 @@ const TourDetails = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="py-12">
         <div className="tourigo-container">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            {/* Main Content */}
             <div className="lg:col-span-2">
               <div className="mb-8">
                 <div className="grid grid-cols-2 gap-4">
@@ -432,7 +455,6 @@ const TourDetails = () => {
               </Tabs>
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-2">
               <div className="bg-white border border-gray-200 rounded-xl shadow-sm sticky top-24">
                 <div className="border-t border-gray-200 p-4">
@@ -496,7 +518,6 @@ const TourDetails = () => {
         </div>
       </section>
 
-      {/* Slider for Itinerary Locations */}
       <section className="py-12 bg-tourigo-gray-100">
         <div className="tourigo-container">
           <h2 className="text-2xl font-semibold mb-6">Các địa điểm trong lịch trình</h2>
@@ -546,7 +567,5 @@ const TourDetails = () => {
     </div>
   );
 };
-
-
 
 export default TourDetails;
