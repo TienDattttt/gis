@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.gis.db import models as gis_models
-from django.db.models import JSONField  # Thay đổi import
+from django.db.models import JSONField 
 from django.contrib.auth.models import User
 
 class District(gis_models.Model):
@@ -88,7 +88,7 @@ class Rating(models.Model):
     class Meta:
         managed = True
         db_table = 'ratings'
-        unique_together = ('user', 'location')  # Mỗi người dùng chỉ đánh giá một địa điểm một lần
+        unique_together = ('user', 'location')  
 
     def __str__(self):
         return f"{self.user.username} rated {self.location.name} - {self.score} stars"

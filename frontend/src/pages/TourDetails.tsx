@@ -42,8 +42,9 @@ const carIcon = L.icon({
   iconSize: [38, 38],
   iconAnchor: [19, 19],
 });
-
-// Component RoutingMachine
+// ==========================
+// 2. COMPONENT PHỤ TRỢ
+// ==========================
 const RoutingMachine = ({ waypoints, animateCar }) => {
   const map = useMap();
   const [carMarker, setCarMarker] = useState(null);
@@ -116,7 +117,9 @@ const RoutingMachine = ({ waypoints, animateCar }) => {
 
   return null;
 };
-
+// ==========================
+// 3. COMPONENT CHÍNH
+// ==========================
 const TourDetails = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
@@ -125,6 +128,8 @@ const TourDetails = () => {
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [lastLocation, setLastLocation] = useState(null);
+
+   // --- Lấy dữ liệu từ router ---
   const location = useLocation();
   const navigate = useNavigate();
   const itineraryData = location.state?.itinerary;

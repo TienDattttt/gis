@@ -1,3 +1,4 @@
+from django.forms import ValidationError
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -11,8 +12,11 @@ from .serializers import LocationSerializer, ItinerarySerializer, DistrictSerial
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.measure import D
+from rest_framework.pagination import PageNumberPagination
 
-# View cho đăng ký
+
+# Authentication
+# Đăng ký
 class SignUpView(APIView):
     permission_classes = [AllowAny]
 
@@ -43,7 +47,7 @@ class SignUpView(APIView):
             'user': {'username': user.username, 'email': user.email}
         }, status=status.HTTP_201_CREATED)
 
-# View cho đăng nhập
+# Đăng nhập
 class SignInView(APIView):
     permission_classes = [AllowAny]
 
@@ -65,32 +69,175 @@ class SignInView(APIView):
             'user': {'username': user.username, 'email': user.email}
         }, status=status.HTTP_200_OK)
 
-# View cho đánh giá
-class RatingCreateView(APIView):
-    permission_classes = [IsAuthenticated]
 
+# Location
+# Danh sách địa điểm
+class LocationListView(generics.ListAPIView):
+    serializer_class = LocationSerializer
+    pagination_class = PageNumberPagination
+
+    def paginate_queryset(self, queryset):
+        if self.request.query_params.get('all', '').lower() == 'true':
+            return None
+        return super().paginate_queryset(queryset)
+
+    def get_queryset(self):
+        queryset = Location.objects.all().order_by('id')
+        params = self.request.query_params
+
+        search_query = params.get('search')
+        tourism_type = params.get('tourism_type')
+        nearby = params.get('nearby')
+        lat = params.get('lat')
+        lng = params.get('lng')
+        district = params.get('district')
+        radius_km = params.get('radius')
+
+        if district:
+            district_obj = District.objects.filter(name=district).first()
+            if district_obj:
+                queryset = queryset.filter(geom__within=district_obj.geom)
+
+        if search_query:
+            queryset = queryset.filter(
+                Q(name__icontains=search_query) |
+                Q(name_vi__icontains=search_query) |
+                Q(details__icontains=search_query)
+            )
+
+        if tourism_type:
+            queryset = queryset.filter(tourism_type=tourism_type)
+
+        if nearby and lat and lng:
+            try:
+                point = Point(float(lng), float(lat), srid=4326)
+            except ValueError:
+                raise ValidationError("Invalid latitude/longitude format.")
+
+            queryset = queryset.filter(geom__isnull=False)
+
+            if radius_km:
+                try:
+                    radius_m = float(radius_km) * 1000
+                    queryset = queryset.filter(geom__dwithin=(point, radius_m / 111000))
+                except ValueError:
+                    raise ValidationError("Invalid radius format. Must be a number.")
+
+            queryset = queryset.annotate(distance=Distance('geom', point)).order_by('distance')
+
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        page = self.paginate_queryset(queryset)
+        serializer = self.get_serializer(page if page is not None else queryset, many=True)
+        if page is not None:
+            return self.get_paginated_response(serializer.data)
+        return Response(serializer.data)
+
+# Chi tiết địa điểm
+class LocationDetailView(generics.RetrieveAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+
+    
+# thay đổi địa điểm trong lịch trình
+class AlternativeLocationsView(APIView):
+    def get(self, request, tourism_type):
+        locations = Location.objects.filter(tourism_type=tourism_type)
+        serializer = LocationSerializer(locations, many=True)
+        return Response(serializer.data)
+
+# Itinerary
+# Gợi ý lịch trình
+class ItinerarySuggestionView(APIView):
     def post(self, request):
-        serializer = RatingSerializer(data=request.data, context={'request': request})
-        if serializer.is_valid():
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        days = request.data.get('days', 1)
+        current_lat = request.data.get('latitude')
+        current_lng = request.data.get('longitude')
+        tourism_types = ['viewpoint', 'museum', 'attraction', 'theme_park']
 
-class RatingUpdateView(APIView):
+        # Validate dữ liệu đầu vào
+        if current_lat is None or current_lng is None:
+            return Response({"error": "Current location (latitude and longitude) is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            days = int(days)
+            current_lat = float(current_lat)
+            current_lng = float(current_lng)
+            if days < 1 or days > 3:
+                return Response({"error": "Days must be between 1 and 3"}, status=status.HTTP_400_BAD_REQUEST)
+        except (ValueError, TypeError):
+            return Response({"error": "Invalid input for days, latitude, or longitude"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Tạo Point
+        current_location = Point(current_lng, current_lat, srid=4326)
+
+        # Lấy danh sách địa điểm
+        all_locations = Location.objects.filter(
+            tourism_type__in=tourism_types,
+            geom__isnull=False
+        ).annotate(
+            distance=Distance('geom', current_location)
+        ).order_by('distance')
+
+        if not all_locations.exists():
+            return Response({"error": "No available locations found"}, status=status.HTTP_404_NOT_FOUND)
+
+        # Phân bổ địa điểm cho từng ngày
+        itinerary_locations = []
+        used_location_ids = set()
+        locations_per_day = len(tourism_types)  #Xác định số lượng địa điểm cần chọn mỗi ngày (có 4 loại du lịch, vậy mỗi ngày sẽ chọn 4 địa điểm).
+        available_locations = list(all_locations)
+
+        for day in range(1, days + 1):
+            day_locations = []
+            for tourism_type in tourism_types:
+                for loc in available_locations:
+                    if loc.id not in used_location_ids and loc.tourism_type == tourism_type:
+                        day_locations.append(loc)
+                        used_location_ids.add(loc.id)
+                        break
+
+            if len(day_locations) != locations_per_day:
+                return Response({"error": f"Not enough locations for day {day}"}, status=status.HTTP_404_NOT_FOUND)
+
+            # Sắp xếp trong ngày theo khoảng cách
+            day_locations.sort(key=lambda loc: loc.distance.m)
+
+            for idx, loc in enumerate(day_locations, 1):
+                itinerary_locations.append(ItineraryLocation(
+                    location=loc,
+                    visit_order=idx,
+                    day=day,
+                    estimated_time="01:00:00"
+                ))
+
+        # Tạo itinerary
+        itinerary = Itinerary.objects.create(
+            survey_data={
+                "days": days,
+                "current_location": {"lat": current_lat, "lng": current_lng}
+            },
+            user=request.user if request.user.is_authenticated else None
+        )
+
+        # Bulk create ItineraryLocation
+        for loc in itinerary_locations:
+            loc.itinerary = itinerary
+        ItineraryLocation.objects.bulk_create(itinerary_locations)
+
+        # Serialize và trả về
+        serializer = ItinerarySerializer(itinerary)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+# View lấy danh sách lịch trình của người dùng
+class ItineraryListView(generics.ListAPIView):
+    serializer_class = ItinerarySerializer
     permission_classes = [IsAuthenticated]
 
-    def put(self, request, pk):
-        try:
-            rating = Rating.objects.get(pk=pk, user=request.user)
-        except Rating.DoesNotExist:
-            return Response({"error": "Đánh giá không tồn tại hoặc bạn không có quyền chỉnh sửa"}, status=status.HTTP_404_NOT_FOUND)
-
-        serializer = RatingSerializer(rating, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    def get_queryset(self):
+        return Itinerary.objects.filter(user=self.request.user).order_by('-created_at')
 # View cho lưu lịch trình
 class ItinerarySaveView(APIView):
     permission_classes = [IsAuthenticated]
@@ -127,117 +274,6 @@ class ItinerarySaveView(APIView):
                 {"error": "Itinerary not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
-
-# View cho xóa lịch trình
-class ItineraryDeleteView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def delete(self, request, pk):
-        try:
-            itinerary = Itinerary.objects.get(pk=pk, user=request.user)
-            itinerary.delete()
-            return Response({"message": "Itinerary deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
-        except Itinerary.DoesNotExist:
-            return Response(
-                {"error": "Itinerary not found or you do not have permission to delete it"},
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-# View danh sách lịch trình
-class ItineraryListView(generics.ListAPIView):
-    serializer_class = ItinerarySerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_queryset(self):
-        return Itinerary.objects.filter(user=self.request.user).order_by('-created_at')
-
-# View gợi ý lịch trình
-class ItinerarySuggestionView(APIView):
-    def post(self, request):
-        days = request.data.get('days', 1)
-        current_lat = request.data.get('latitude')
-        current_lng = request.data.get('longitude')
-        tourism_types = ['viewpoint', 'museum', 'attraction', 'theme_park']
-
-        # Kiểm tra dữ liệu đầu vào
-        if not (current_lat and current_lng):
-            return Response({"error": "Current location is required"}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            days = int(days)
-            if days < 1 or days > 3:
-                return Response({"error": "Days must be between 1 and 3"}, status=status.HTTP_400_BAD_REQUEST)
-        except ValueError:
-            return Response({"error": "Invalid number of days"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Tạo điểm vị trí hiện tại
-        current_location = Point(float(current_lng), float(current_lat), srid=4326)
-
-        # Tạo lịch trình
-        itinerary_data = {
-            "survey_data": {
-                "days": days,
-                "current_location": {"lat": current_lat, "lng": current_lng}
-            },
-            "user": request.user if request.user.is_authenticated else None
-        }
-
-        # Lấy tất cả các địa điểm và tính khoảng cách từ vị trí hiện tại
-        all_locations = Location.objects.filter(
-            tourism_type__in=tourism_types,
-            geom__isnull=False
-        ).annotate(
-            distance=Distance('geom', current_location)
-        ).order_by('distance')
-
-        if not all_locations:
-            return Response({"error": "No available locations found"}, status=status.HTTP_404_NOT_FOUND)
-
-        # Phân bổ địa điểm vào từng ngày
-        itinerary_locations = []
-        used_locations = set()
-        locations_per_day = len(tourism_types)
-
-        available_locations = list(all_locations)
-        for day in range(1, days + 1):
-            day_locations = []
-            for tourism_type in tourism_types:
-                for loc in available_locations:
-                    if loc.id in used_locations or loc.tourism_type != tourism_type:
-                        continue
-                    day_locations.append(loc)
-                    used_locations.add(loc.id)
-                    break
-
-            if len(day_locations) != locations_per_day:
-                return Response(
-                    {"error": f"Not enough locations for day {day}"},
-                    status=status.HTTP_404_NOT_FOUND
-                )
-
-            day_locations.sort(key=lambda loc: loc.distance.m)
-            for idx, location in enumerate(day_locations, 1):
-                itinerary_locations.append({
-                    "location": location,
-                    "visit_order": idx,
-                    "day": day,
-                    "estimated_time": "01:00:00"
-                })
-
-        # Lưu lịch trình vào database
-        itinerary = Itinerary.objects.create(**itinerary_data)
-        for loc_data in itinerary_locations:
-            ItineraryLocation.objects.create(
-                itinerary=itinerary,
-                location=loc_data["location"],
-                visit_order=loc_data["visit_order"],
-                day=loc_data["day"],
-                estimated_time=loc_data["estimated_time"]
-            )
-
-        serializer = ItinerarySerializer(itinerary)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
 # View cập nhật lịch trình
 class ItineraryUpdateView(APIView):
     permission_classes = [IsAuthenticated]
@@ -322,96 +358,49 @@ class ItineraryUpdateView(APIView):
 
         serializer = ItinerarySerializer(itinerary)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+# View cho xóa lịch trình
+class ItineraryDeleteView(APIView):
+    permission_classes = [IsAuthenticated]
 
-# View danh sách địa điểm thay thế
-class AlternativeLocationsView(APIView):
-    def get(self, request, tourism_type):
-        locations = Location.objects.filter(tourism_type=tourism_type)
-        serializer = LocationSerializer(locations, many=True)
-        return Response(serializer.data)
-
-# View danh sách địa điểm
-class LocationListView(generics.ListAPIView):
-    serializer_class = LocationSerializer
-
-    def get_queryset(self):
-        queryset = Location.objects.all().order_by('id')
-        search_query = self.request.query_params.get('search', None)
-        tourism_type = self.request.query_params.get('tourism_type', None)
-        nearby = self.request.query_params.get('nearby', None)
-        lat = self.request.query_params.get('lat', None)
-        lng = self.request.query_params.get('lng', None)
-        district = self.request.query_params.get('district', None)
-        limit = self.request.query_params.get('limit', 20)
-
+    def delete(self, request, pk):
         try:
-            limit = int(limit)
-        except (ValueError, TypeError):
-            limit = 20
-
-        # Lọc theo quận/huyện
-        if district:
-            try:
-                district_obj = District.objects.get(name=district)
-                queryset = queryset.filter(geom__within=district_obj.geom)
-            except District.DoesNotExist:
-                queryset = queryset.none()
-
-        # Tìm kiếm theo từ khóa
-        if search_query:
-            queryset = queryset.filter(
-                Q(name__icontains=search_query) |
-                Q(name_vi__icontains=search_query) |
-                Q(details__contains=search_query)
+            itinerary = Itinerary.objects.get(pk=pk, user=request.user)
+            itinerary.delete()
+            return Response({"message": "Itinerary deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        except Itinerary.DoesNotExist:
+            return Response(
+                {"error": "Itinerary not found or you do not have permission to delete it"},
+                status=status.HTTP_404_NOT_FOUND
             )
+# Rating
+# View cho đánh giá
+class RatingCreateView(APIView):
+    permission_classes = [IsAuthenticated]
 
-        # Lọc theo tourism_type
-        if tourism_type:
-            queryset = queryset.filter(tourism_type=tourism_type)
+    def post(self, request):
+        serializer = RatingSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        # Tìm địa điểm gần vị trí hiện tại
-        if nearby and lat and lng:
-            try:
-                point = Point(float(lng), float(lat), srid=4326)
-                queryset = queryset.filter(geom__isnull=False).annotate(
-                    distance=Distance('geom', point)
-                ).order_by('distance')
-            except (ValueError, TypeError):
-                pass
+class RatingUpdateView(APIView):
+    permission_classes = [IsAuthenticated]
 
-        return queryset[:limit]
+    def put(self, request, pk):
+        try:
+            rating = Rating.objects.get(pk=pk, user=request.user)
+        except Rating.DoesNotExist:
+            return Response({"error": "Đánh giá không tồn tại hoặc bạn không có quyền chỉnh sửa"}, status=status.HTTP_404_NOT_FOUND)
 
-# View chi tiết địa điểm
-class LocationDetailView(generics.RetrieveAPIView):
-    queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+        serializer = RatingSerializer(rating, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# View tất cả địa điểm
-class AllLocationsView(generics.ListAPIView):
-    serializer_class = LocationSerializer
-    pagination_class = None
-
-    def get_queryset(self):
-        queryset = Location.objects.all().order_by('id')
-        tourism_type = self.request.query_params.get('tourism_type', None)
-        nearby = self.request.query_params.get('nearby', None)
-        lat = self.request.query_params.get('lat', None)
-        lng = self.request.query_params.get('lng', None)
-
-        if tourism_type:
-            queryset = queryset.filter(tourism_type=tourism_type)
-
-        if nearby and lat and lng:
-            try:
-                point = Point(float(lng), float(lat), srid=4326)
-                queryset = queryset.filter(geom__isnull=False).annotate(
-                    distance=Distance('geom', point)
-                ).order_by('distance')
-            except (ValueError, TypeError):
-                pass
-
-        return queryset
-
+# District
 # View danh sách quận/huyện
 class DistrictListView(generics.ListAPIView):
     queryset = District.objects.all().order_by('name')

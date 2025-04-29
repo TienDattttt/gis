@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -21,6 +21,29 @@ import Profile from './components/Profile';
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === "/map";
+
+  return (
+    <>
+      {!hideHeaderFooter && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/tour-details" element={<TourDetails />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/blog-grid" element={<BlogGrid />} />
+        <Route path="/blog-details/:id" element={<BlogDetails />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -28,19 +51,7 @@ const App = () => (
       <Sonner position="top-right" richColors />
       <BrowserRouter>
         <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/tour-details" element={<TourDetails />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/blog-grid" element={<BlogGrid />} />
-          <Route path="/blog-details/:id" element={<BlogDetails />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

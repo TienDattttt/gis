@@ -124,10 +124,7 @@ export const LocationDetail = ({ location, locationsList, onClose, setSelectedRo
                     <Navigation size={14} className="action-icon" />
                     Đường đi
                   </button>
-                  <button className="action-button">
-                    <BookmarkPlus size={14} className="action-icon" />
-                    Lưu
-                  </button>
+                  
                 </div>
               </div>
             ))}
@@ -164,10 +161,7 @@ export const LocationDetail = ({ location, locationsList, onClose, setSelectedRo
               <Navigation size={20} className="action-icon" color="#1a73e8" />
               Đường đi
             </button>
-            <button className="action-button">
-              <BookmarkPlus size={20} className="action-icon" color="#1a73e8" />
-              Lưu
-            </button>
+           
           </div>
 
           {location.details && (location.details.short_description || location.details.description) && (

@@ -21,32 +21,67 @@ const BlogGrid = () => {
         setLoading(true);
         setError(null);
         const response = await axios.get(
-          `http://localhost:8000/api/locations/?page=${currentPage}&search=${searchQuery}&tag=${selectedTag}`
+          `http://localhost:8000/api/locations/?page=${currentPage}&search=${searchQuery}&tourism_type=${selectedTag}`
         );
-        const { results, count } = response.data;
+
+        // Log dữ liệu để kiểm tra cấu trúc
+        console.log('API response:', response.data);
+
+        let results = [];
+        let count = 0;
+
+        // Xử lý dữ liệu phản hồi
+        if (Array.isArray(response.data)) {
+          results = response.data;
+          count = results.length;
+        } else if (response.data && response.data.results) {
+          results = response.data.results;
+          count = response.data.count || results.length;
+        } else {
+          console.warn('Dữ liệu API không hợp lệ:', response.data);
+          setPosts([]);
+          setTotalPages(1);
+          setLoading(false);
+          setError('Dữ liệu từ server không đúng định dạng.');
+          return;
+        }
+
+        // Kiểm tra results là mảng trước khi map
+        if (!Array.isArray(results)) {
+          console.warn('Results không phải mảng:', results);
+          setPosts([]);
+          setTotalPages(1);
+          setLoading(false);
+          setError('Không tìm thấy địa điểm nào.');
+          return;
+        }
 
         const postsData = results.map(location => {
-          const details = typeof location.details === 'string' 
-            ? JSON.parse(location.details) 
-            : location.details;
+          const details = typeof location.details === 'string'
+            ? JSON.parse(location.details)
+            : (location.details || {});
 
           return {
             id: location.id,
-            title: details.title || 'Không có tiêu đề',
+            title: details.title || location.name || 'Không có tiêu đề',
             short_des: details.short_description || 'Không có mô tả.',
-            address: details.basic_info?.address || 'Giờ mở cửa không có sẵn',
+            address: details.basic_info?.address || 'Địa điểm không xác định',
             author: 'Quản trị viên',
-            image: location.images.length > 0 ? location.images[0].url : '/images/default-placeholder.jpg',
+            image: location.images && location.images.length > 0
+              ? location.images[0].url
+              : '/images/default-placeholder.jpg',
             opening_hours: details.basic_info?.opening_hours || 'Giờ mở cửa không có sẵn',
           };
         });
 
         setPosts(postsData);
-        setTotalPages(Math.ceil(count / 6));
+        setTotalPages(Math.ceil(count / 6) || 1);
         setLoading(false);
       } catch (error) {
         console.error('Lỗi khi lấy dữ liệu bài viết:', error);
         setError('Không thể tải dữ liệu. Vui lòng thử lại sau.');
+        setPosts([]);
+        setTotalPages(1);
         setLoading(false);
       }
     };
@@ -86,7 +121,6 @@ const BlogGrid = () => {
         <div className="tourigo-container">
           {/* Thanh tìm kiếm */}
           <div className="mb-8">
-           
             <div className="relative max-w-md mx-auto">
               <Input 
                 type="text" 
@@ -112,7 +146,7 @@ const BlogGrid = () => {
               >
                 <Link to={`/blog-details/${post.id}`} className="block">
                   <img 
-                    src={`${BASE_URL}/media${post.image}`}  
+                    src={post.image.startsWith('/') ? `${BASE_URL}/media${post.image}` : post.image}  
                     alt={post.title}
                     className="w-full h-[220px] object-cover"
                   />

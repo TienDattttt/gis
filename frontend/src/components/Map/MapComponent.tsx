@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, ZoomControl, useMap, Marker, Popup, Circle, Ge
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 import { SearchBar } from '../SearchBar/SearchBar';
-import { SidePanel } from '../SidePanel/SidePanel';
 import { LocationDetail } from '../LocationDetail/LocationDetail';
 import { Landmark, BookOpen, Tent, Mountain, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -13,7 +12,10 @@ import 'leaflet-routing-machine';
 import './Map.css';
 import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 
-// Sửa lỗi icon mặc định của Leaflet
+
+// ==========================
+// 1. CẤU HÌNH ICON LEAFLET
+// ==========================
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -32,6 +34,10 @@ const customIcon = new L.Icon({
 });
 const defaultIcon = new L.Icon.Default();
 
+
+// ==========================
+// 2. COMPONENT PHỤ TRỢ
+// ==========================
 // Component để đặt chế độ xem cho vị trí cụ thể
 const SetViewToLocation = ({ location }) => {
   const map = useMap();
@@ -153,9 +159,12 @@ const TOURISM_TYPE_MAPPING = {
   'Điểm ngắm cảnh': 'viewpoint',
 };
 
+// ==========================
+// 3. COMPONENT CHÍNH
+// ==========================
 export const MapComponent = () => {
   const BASE_URL = 'http://localhost:8000';
-
+  // State
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [directionsMode, setDirectionsMode] = useState(false);
   const [searchText, setSearchText] = useState('');
@@ -172,9 +181,9 @@ export const MapComponent = () => {
   const [mapReady, setMapReady] = useState(false);
   const [showPanorama, setShowPanorama] = useState(false);
   const [panoramaUrl, setPanoramaUrl] = useState(null);
-  const [districts, setDistricts] = useState([]); // Thêm state cho quận/huyện
-  const [selectedDistrict, setSelectedDistrict] = useState(''); // State cho quận được chọn
-  const [districtGeoJSON, setDistrictGeoJSON] = useState(null); // State cho ranh giới quận
+  const [districts, setDistricts] = useState([]);
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [districtGeoJSON, setDistrictGeoJSON] = useState(null);
 
   const currentLocation = {
     lat: 16.054054614098437,
@@ -182,35 +191,30 @@ export const MapComponent = () => {
     name: 'Khách sạn Mường Thanh',
   };
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const toggleDirections = () => setDirectionsMode(!directionsMode);
-
   const mapContainerRef = useRef(null);
 
-  // Kiểm tra tải biểu tượng
+  // ==========================
+  // 4. HOOK - LẤY DỮ LIỆU BAN ĐẦU
+  // ==========================
   useEffect(() => {
     const img = new Image();
     img.src = '/images/logo.svg';
-    img.onerror = () => {
-      console.error('Không thể tải biểu tượng logo.svg. Kiểm tra đường dẫn trong thư mục public.');
-    };
+    img.onerror = () => console.error('Không thể tải biểu tượng logo.svg. Kiểm tra đường dẫn trong thư mục public.');
   }, []);
-
-  // Lấy vị trí người dùng
   useEffect(() => {
     setUserPosition([currentLocation.lat, currentLocation.lng]);
   }, []);
-
-  // Lấy danh sách quận/huyện
   useEffect(() => {
     axios.get(`${BASE_URL}/api/districts/`)
-      .then(response => {
-        setDistricts(response.data);
-      })
-      .catch(error => {
-        console.error('Lỗi khi lấy danh sách quận/huyện:', error);
-      });
+      .then(res => setDistricts(res.data))
+      .catch(err => console.error('Lỗi khi lấy danh sách quận/huyện:', err));
   }, []);
+
+  // ==========================
+  // 5. HÀM XỬ LÝ SỰ KIỆN
+  // ==========================
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleDirections = () => setDirectionsMode(!directionsMode);
 
   const filters = [
     { name: 'Điểm tham quan', icon: <Landmark size={20} /> },
@@ -219,7 +223,7 @@ export const MapComponent = () => {
     { name: 'Điểm ngắm cảnh', icon: <Mountain size={20} /> },
   ];
 
-  // Xử lý khi chọn quận/huyện
+  // --- Lọc theo quận/huyện
   const handleDistrictChange = async (e) => {
     const districtName = e.target.value;
     setSelectedDistrict(districtName);
@@ -230,64 +234,72 @@ export const MapComponent = () => {
     setSelectedLocation(null);
     setShowLocationDetail(false);
     setSelectedRouteLocation(null);
-    setDistrictGeoJSON(null); // Xóa ranh giới quận cũ ngay lập tức
-  
-    if (districtName) {
-      try {
-        setIsLoading(true);
-        // Lấy ranh giới quận
-        console.log(`Đang tải dữ liệu cho quận: ${districtName}`);
-        const districtResponse = await axios.get(`${BASE_URL}/api/districts/${districtName}/`);
-        
-        // Kiểm tra dữ liệu phản hồi
-        if (!districtResponse.data.geom) {
-          console.error(`Không tìm thấy dữ liệu geom cho quận ${districtName}`);
-          setDistrictGeoJSON(null);
-          alert(`Không thể tải ranh giới cho quận ${districtName}.`);
-          return;
-        }
-  
-        const newGeoJSON = {
-          type: 'Feature',
-          properties: { name: districtResponse.data.name },
-          geometry: JSON.parse(districtResponse.data.geom),
-        };
-  
-        console.log('GeoJSON mới:', newGeoJSON);
-        setDistrictGeoJSON(newGeoJSON);
-  
-        // Lấy địa điểm trong quận
-        const locationsResponse = await axios.get(`${BASE_URL}/api/locations/`, {
-          params: { district: districtName },
-        });
-  
-        console.log(`Yêu cầu API: ${BASE_URL}/api/locations/?district=${districtName}`);
-        console.log('Phản hồi API địa điểm:', locationsResponse.data);
-  
-        // Xử lý dữ liệu phân trang hoặc mảng trực tiếp
-        let locationsData = locationsResponse.data;
-        if (locationsData.results) {
-          locationsData = locationsData.results; // Sử dụng results nếu dữ liệu phân trang
-        }
-  
-        // Kiểm tra xem dữ liệu có phải là mảng không
-        if (!Array.isArray(locationsData)) {
-          console.error('Dữ liệu địa điểm không phải mảng:', locationsData);
-          setFilteredLocations([]);
-          alert('Lỗi: Dữ liệu từ server không đúng định dạng.');
-          return;
-        }
-  
-        // Kiểm tra mảng rỗng
-        if (locationsData.length === 0) {
-          console.warn(`Không tìm thấy địa điểm nào cho quận ${districtName}`);
-          setFilteredLocations([]);
-          alert(`Không có địa điểm nào trong quận ${districtName}.`);
-          return;
-        }
-  
-        // Xử lý dữ liệu địa điểm
-        const locations = locationsData.map((loc) => ({
+    setDistrictGeoJSON(null);
+    //Kiểm tra tên quận: Nếu không có tên quận được chọn (tức là giá trị rỗng), hàm sẽ thoát sớm mà không thực hiện yêu cầu API.
+    if (!districtName) {
+      setDistrictGeoJSON(null);
+      setFilteredLocations([]);
+      return;
+    }
+    try {
+      setIsLoading(true);
+      const districtRes = await axios.get(`${BASE_URL}/api/districts/${districtName}/`);
+      if (!districtRes.data.geom) {
+        console.error(`Không tìm thấy dữ liệu geom cho quận ${districtName}`);
+        setDistrictGeoJSON(null);
+        alert(`Không thể tải ranh giới cho quận ${districtName}.`);
+        return;
+      }
+      const newGeoJSON = {
+        type: 'Feature',
+        properties: { name: districtRes.data.name },
+        geometry: JSON.parse(districtRes.data.geom),
+      };
+      setDistrictGeoJSON(newGeoJSON);
+      //Gửi một yêu cầu GET khác để lấy các địa điểm trong quận với tham số district được truyền vào
+      const locationsRes = await axios.get(`${BASE_URL}/api/locations/`, { params: { district: districtName, all: true } });
+      
+      const locationsData = locationsRes.data.results || locationsRes.data;
+      if (!Array.isArray(locationsData)) {
+        setFilteredLocations([]);
+        alert('Lỗi: Dữ liệu từ server không đúng định dạng.');
+        return;
+      }
+      if (locationsData.length === 0) {
+        setFilteredLocations([]);
+        alert(`Không có địa điểm nào trong quận ${districtName}.`);
+        return;
+      }
+      const locations = locationsData.map(loc => ({
+        id: loc.id,
+        name: loc.name_vi || loc.name,
+        address: loc.details?.address || '',
+        type: loc.tourism_type,
+        location: loc.geom ? [loc.geom.lat, loc.geom.lng] : null,
+        images: loc.images || [],
+        details: loc.details || {},
+        embed_url: loc.embed_url || null,
+      }));
+      setFilteredLocations(locations);
+      setShowLocationDetail(true);
+    } catch (error) {
+      setDistrictGeoJSON(null);
+      setFilteredLocations([]);
+      alert('Có lỗi xảy ra khi lấy dữ liệu. Vui lòng thử lại.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // --- Tìm kiếm
+  const handleSearch = (text) => setSearchText(text);
+
+  // --- Chọn gợi ý tìm kiếm
+  const handleSelectSuggestion = (suggestion) => {
+    axios.get(`${BASE_URL}/api/locations/${suggestion.id}/`)
+      .then(res => {
+        const loc = res.data;
+        setSelectedLocation({
           id: loc.id,
           name: loc.name_vi || loc.name,
           address: loc.details?.address || '',
@@ -296,156 +308,57 @@ export const MapComponent = () => {
           images: loc.images || [],
           details: loc.details || {},
           embed_url: loc.embed_url || null,
-        }));
-  
-        console.log('Danh sách địa điểm:', locations);
-        setFilteredLocations(locations);
-        setShowLocationDetail(true);
-      } catch (error) {
-        console.error('Lỗi khi lấy dữ liệu quận/huyện hoặc địa điểm:', error);
-        setDistrictGeoJSON(null);
-        setFilteredLocations([]);
-        alert('Có lỗi xảy ra khi lấy dữ liệu. Vui lòng thử lại.');
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      setDistrictGeoJSON(null);
-      setFilteredLocations([]);
-    }
-  };
-
-  const handleSearch = (text) => {
-    setSearchText(text);
-  };
-
-  const handleSelectSuggestion = (suggestion) => {
-    axios.get(`${BASE_URL}/api/locations/${suggestion.id}/`)
-      .then(response => {
-        const locationData = response.data;
-        setSelectedLocation({
-          id: locationData.id,
-          name: locationData.name_vi || locationData.name,
-          address: locationData.details?.address || '',
-          type: locationData.tourism_type,
-          location: locationData.geom ? [locationData.geom.lat, locationData.geom.lng] : null,
-          images: locationData.images || [],
-          details: locationData.details || {},
-          embed_url: locationData.embed_url || null,
         });
         setShowLocationDetail(true);
         setFilteredLocations([]);
         setNearbyLocations([]);
         setNearbyRadius(null);
         setSelectedRouteLocation(null);
-        setSelectedDistrict(''); // Xóa quận được chọn khi tìm kiếm
-        setDistrictGeoJSON(null); // Xóa ranh giới quận
+        setSelectedDistrict('');
+        setDistrictGeoJSON(null);
       })
-      .catch(error => {
-        console.error('Lỗi khi lấy thông tin địa điểm:', error);
-      });
+      .catch(err => console.error('Lỗi khi lấy thông tin địa điểm:', err));
   };
 
+  // --- Lọc theo loại hình
   const handleFilterSelect = async (filterName) => {
     if (selectedFilter === filterName) {
       setSelectedFilter(null);
       setFilteredLocations([]);
       setShowLocationDetail(false);
       setSelectedRouteLocation(null);
-      setSelectedDistrict(''); // Xóa quận được chọn
-      setDistrictGeoJSON(null); // Xóa ranh giới quận
-    } else {
-      setSelectedFilter(filterName);
-      setSelectedLocation(null);
-      setNearbyLocations([]);
-      setNearbyRadius(null);
-      setSelectedDistrict(''); // Xóa quận được chọn
-      setDistrictGeoJSON(null); // Xóa ranh giới quận
-
-      const tourismType = TOURISM_TYPE_MAPPING[filterName];
-      if (!tourismType) return;
-
-      try {
-        setIsLoading(true);
-        const response = await axios.get(`${BASE_URL}/api/locations/all/`, {
-          params: {
-            tourism_type: tourismType,
-            nearby: true,
-            lat: currentLocation.lat,
-            lng: currentLocation.lng,
-          },
-        });
-
-        if (!Array.isArray(response.data)) {
-          console.error('Dữ liệu trả về không phải là mảng:', response.data);
-          setFilteredLocations([]);
-          setShowLocationDetail(false);
-          alert(`Không tìm thấy địa điểm nào cho loại hình "${filterName}"`);
-          return;
-        }
-
-        const locations = response.data.map(loc => ({
-          id: loc.id,
-          name: loc.name_vi || loc.name,
-          address: loc.details?.address || '',
-          type: loc.tourism_type,
-          location: loc.geom ? [loc.geom.lat, loc.geom.lng] : null,
-          images: loc.images || [],
-          details: loc.details || {},
-          distance: loc.distance || calculateDistance(
-            currentLocation.lat,
-            currentLocation.lng,
-            loc.geom?.lat,
-            loc.geom?.lng
-          ),
-          embed_url: loc.embed_url || null,
-        }));
-
-        locations.sort((a, b) => a.distance - b.distance);
-
-        setFilteredLocations(locations);
-        setShowLocationDetail(true);
-      } catch (error) {
-        console.error('Lỗi khi lấy danh sách địa điểm:', error);
-        setFilteredLocations([]);
-        setShowLocationDetail(false);
-        alert('Có lỗi xảy ra khi lấy danh sách địa điểm. Vui lòng thử lại sau.');
-      } finally {
-        setIsLoading(false);
-      }
+      setSelectedDistrict('');
+      setDistrictGeoJSON(null);
+      return;
     }
-  };
-
-  const handleNearbySelect = async (radiusKm) => {
-    setNearbyRadius(radiusKm);
-    setIsNearbyDropdownOpen(false);
-    setSelectedFilter(null);
-    setFilteredLocations([]);
+    setSelectedFilter(filterName);
     setSelectedLocation(null);
-    setSelectedRouteLocation(null);
-    setShowLocationDetail(false);
-    setSelectedDistrict(''); // Xóa quận được chọn
-    setDistrictGeoJSON(null); // Xóa ranh giới quận
+    setNearbyLocations([]);
+    setNearbyRadius(null);
+    setSelectedDistrict('');
+    setDistrictGeoJSON(null);
 
+    const tourismType = TOURISM_TYPE_MAPPING[filterName];
+    if (!tourismType) return;
     try {
       setIsLoading(true);
-      const response = await axios.get(`${BASE_URL}/api/locations/all/`, {
+      const res = await axios.get(`${BASE_URL}/api/locations/`, {
         params: {
+          tourism_type: tourismType,
           nearby: true,
           lat: currentLocation.lat,
           lng: currentLocation.lng,
-          radius: radiusKm,
+          all: true,
         },
       });
-
-      if (!Array.isArray(response.data)) {
-        console.error('Dữ liệu trả về không phải là mảng:', response.data);
-        setNearbyLocations([]);
-        alert('Không tìm thấy địa điểm nào trong bán kính đã chọn.');
+      const locationsData = res.data.results || res.data;
+      if (!Array.isArray(locationsData)) {
+        setFilteredLocations([]);
+        setShowLocationDetail(false);
+        alert(`Không tìm thấy địa điểm nào cho loại hình "${filterName}"`);
         return;
       }
-
-      const locations = response.data.map(loc => ({
+      const locations = locationsData.map(loc => ({
         id: loc.id,
         name: loc.name_vi || loc.name,
         address: loc.details?.address || '',
@@ -454,20 +367,69 @@ export const MapComponent = () => {
         images: loc.images || [],
         details: loc.details || {},
         distance: loc.distance || calculateDistance(
-          currentLocation.lat,
-          currentLocation.lng,
-          loc.geom?.lat,
-          loc.geom?.lng
+          currentLocation.lat, currentLocation.lng,
+          loc.geom?.lat, loc.geom?.lng
         ),
         embed_url: loc.embed_url || null,
       }));
-
       locations.sort((a, b) => a.distance - b.distance);
+      setFilteredLocations(locations);
+      setShowLocationDetail(true);
+    } catch (error) {
+      setFilteredLocations([]);
+      setShowLocationDetail(false);
+      alert('Có lỗi xảy ra khi lấy danh sách địa điểm. Vui lòng thử lại sau.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  // --- Lọc theo bán kính gần tôi
+  const handleNearbySelect = async (radiusKm) => {
+    setNearbyRadius(radiusKm);
+    setIsNearbyDropdownOpen(false);
+    setSelectedFilter(null);
+    setFilteredLocations([]);
+    setSelectedLocation(null);
+    setSelectedRouteLocation(null);
+    setShowLocationDetail(false);
+    setSelectedDistrict('');
+    setDistrictGeoJSON(null);
+    try {
+      setIsLoading(true);
+      const res = await axios.get(`${BASE_URL}/api/locations/`, {
+        params: {
+          nearby: true,
+          lat: currentLocation.lat,
+          lng: currentLocation.lng,
+          radius: radiusKm,
+          all: true,
+        },
+      });
+      const locationsData = res.data.results || res.data;
+      if (!Array.isArray(locationsData) || locationsData.length === 0) {
+        setNearbyLocations([]);
+        alert('Không tìm thấy địa điểm nào trong bán kính đã chọn.');
+        return;
+      }
+      const locations = locationsData.map(loc => ({
+        id: loc.id,
+        name: loc.name_vi || loc.name,
+        address: loc.details?.address || '',
+        type: loc.tourism_type,
+        location: loc.geom ? [loc.geom.lat, loc.geom.lng] : null,
+        images: loc.images || [],
+        details: loc.details || {},
+        distance: loc.distance || calculateDistance(
+          currentLocation.lat, currentLocation.lng,
+          loc.geom?.lat, loc.geom?.lng
+        ),
+        embed_url: loc.embed_url || null,
+      }));
+      locations.sort((a, b) => a.distance - b.distance);
       setNearbyLocations(locations);
       setShowLocationDetail(true);
     } catch (error) {
-      console.error('Lỗi khi lấy danh sách địa điểm lân cận:', error);
       setNearbyLocations([]);
       alert('Có lỗi xảy ra khi lấy danh sách địa điểm. Vui lòng thử lại sau.');
     } finally {
@@ -475,6 +437,7 @@ export const MapComponent = () => {
     }
   };
 
+  // --- Xóa tìm kiếm
   const clearSearch = () => {
     setSearchText('');
     setSelectedLocation(null);
@@ -486,10 +449,11 @@ export const MapComponent = () => {
     setSelectedRouteLocation(null);
     setShowPanorama(false);
     setPanoramaUrl(null);
-    setSelectedDistrict(''); // Xóa quận được chọn
-    setDistrictGeoJSON(null); // Xóa ranh giới quận
+    setSelectedDistrict('');
+    setDistrictGeoJSON(null);
   };
 
+  // --- Tính khoảng cách (Haversine)
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     if (!lat2 || !lon2) return Infinity;
     const R = 6371e3;
@@ -497,27 +461,27 @@ export const MapComponent = () => {
     const φ2 = (lat2 * Math.PI) / 180;
     const Δφ = ((lat2 - lat1) * Math.PI) / 180;
     const Δλ = ((lon2 - lon1) * Math.PI) / 180;
-
     const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-              Math.cos(φ1) * Math.cos(φ2) *
-              Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      Math.cos(φ1) * Math.cos(φ2) *
+      Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c;
   };
 
-  const handleClearRoute = () => {
-    setSelectedRouteLocation(null);
-  };
-
+  const handleClearRoute = () => setSelectedRouteLocation(null);
   const handleClosePanorama = () => {
     setShowPanorama(false);
     setPanoramaUrl(null);
   };
 
+  // ==========================
+  // 6. RENDER GIAO DIỆN
+  // ==========================
   return (
     <div className="map-page">
       <div className="search-container">
         <div className="search-and-filter">
+          {/* Thanh tìm kiếm */}
           <div className="search-bar-wrapper">
             <SearchBar
               onMenuClick={toggleSidebar}
@@ -530,6 +494,7 @@ export const MapComponent = () => {
               isLoading={isLoading}
             />
           </div>
+          {/* Chọn quận/huyện */}
           <div className="district-select-wrapper">
             <select value={selectedDistrict} onChange={handleDistrictChange} className="district-select">
               <option value="">Chọn quận/huyện</option>
@@ -538,6 +503,7 @@ export const MapComponent = () => {
               ))}
             </select>
           </div>
+          {/* Gần tôi */}
           <div className="nearby-button-wrapper">
             <div
               className="relative"
@@ -550,28 +516,16 @@ export const MapComponent = () => {
               </button>
               {isNearbyDropdownOpen && (
                 <div className="nearby-dropdown">
-                  <button
-                    className="nearby-dropdown-item"
-                    onClick={() => handleNearbySelect(5)}
-                  >
-                    5km
-                  </button>
-                  <button
-                    className="nearby-dropdown-item"
-                    onClick={() => handleNearbySelect(10)}
-                  >
-                    10km
-                  </button>
-                  <button
-                    className="nearby-dropdown-item"
-                    onClick={() => handleNearbySelect(15)}
-                  >
-                    15km
-                  </button>
+                  {[5, 10, 15].map(km => (
+                    <button key={km} className="nearby-dropdown-item" onClick={() => handleNearbySelect(km)}>
+                      {km}km
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
           </div>
+          {/* Lọc loại hình */}
           <div className="filter-buttons">
             {filters.map((filter) => (
               <button
@@ -586,7 +540,7 @@ export const MapComponent = () => {
           </div>
         </div>
       </div>
-
+      {/* Bản đồ */}
       <div className="map-container" ref={mapContainerRef}>
         <MapContainer
           center={userPosition || [16.0598, 108.2257]}
@@ -595,28 +549,18 @@ export const MapComponent = () => {
           className="map"
           whenReady={() => setMapReady(true)}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {mapReady && <ZoomControl position="bottomright" />}
-
-          <SetViewToLocation
-            location={selectedLocation ? selectedLocation.location : (userPosition || [currentLocation.lat, currentLocation.lng])}
-          />
-
+          <SetViewToLocation location={selectedLocation ? selectedLocation.location : (userPosition || [currentLocation.lat, currentLocation.lng])} />
           <FitBoundsToMarkers locations={nearbyLocations.length > 0 ? nearbyLocations : filteredLocations} districtGeoJSON={districtGeoJSON} />
-
+          {/* Ranh giới quận */}
           {districtGeoJSON && (
             <GeoJSON
               data={districtGeoJSON}
-              style={() => ({
-                color: '#ff7800',
-                weight: 2,
-                fillOpacity: 0.2,
-              })}
+              style={() => ({ color: '#ff7800', weight: 2, fillOpacity: 0.2 })}
             />
           )}
-
+          {/* Vòng tròn bán kính */}
           {nearbyRadius && (
             <Circle
               center={[currentLocation.lat, currentLocation.lng]}
@@ -624,20 +568,20 @@ export const MapComponent = () => {
               pathOptions={{ color: '#FF0000', fillColor: '#FF0000', fillOpacity: 0.2 }}
             />
           )}
-
+          {/* Tuyến đường */}
           {selectedRouteLocation && selectedRouteLocation.location && (
             <RoutingMachine
               start={[currentLocation.lat, currentLocation.lng]}
               end={selectedRouteLocation.location}
             />
           )}
-
+          {/* Marker vị trí hiện tại */}
           <Marker position={[currentLocation.lat, currentLocation.lng]}>
             <Popup>
               <strong>{currentLocation.name}</strong>
             </Popup>
           </Marker>
-
+          {/* Marker địa điểm lọc */}
           {filteredLocations.map((loc) => (
             loc.location && (
               <Marker
@@ -664,7 +608,7 @@ export const MapComponent = () => {
               </Marker>
             )
           ))}
-
+          {/* Marker địa điểm gần tôi */}
           {nearbyLocations.map((loc) => (
             loc.location && (
               <Marker
@@ -691,7 +635,7 @@ export const MapComponent = () => {
               </Marker>
             )
           ))}
-
+          {/* Marker địa điểm tìm kiếm */}
           {selectedLocation && selectedLocation.location && !nearbyLocations.length && !filteredLocations.length && (
             <Marker
               position={selectedLocation.location}
@@ -714,15 +658,13 @@ export const MapComponent = () => {
             </Marker>
           )}
         </MapContainer>
-
+        {/* Xóa tuyến đường */}
         {selectedRouteLocation && (
           <button className="clear-route-button" onClick={handleClearRoute}>
             Xóa tuyến đường
           </button>
         )}
-
-        <SidePanel isOpen={sidebarOpen} onClose={toggleSidebar} />
-
+        {/* Chi tiết địa điểm */}
         {showLocationDetail && (
           <LocationDetail
             location={selectedLocation}
@@ -737,13 +679,13 @@ export const MapComponent = () => {
               setSelectedLocation(null);
               setShowPanorama(false);
               setPanoramaUrl(null);
-              setSelectedDistrict(''); // Xóa quận được chọn
-              setDistrictGeoJSON(null); // Xóa ranh giới quận
+              setSelectedDistrict('');
+              setDistrictGeoJSON(null);
             }}
             setSelectedRouteLocation={setSelectedRouteLocation}
           />
         )}
-
+        {/* Panorama */}
         {showPanorama && panoramaUrl && (
           <div className="panorama-container">
             <button className="panorama-close-button" onClick={handleClosePanorama}>
